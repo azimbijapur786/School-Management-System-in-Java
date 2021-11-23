@@ -5,4 +5,4 @@ This is our 2nd year Java mini-project
 
 Teacher Panel :
 
-![alt text] (https://github.com/Saifalicoder/School-Management_System/blob/main/WinBuilder/src/GuiSwing2/Imgs/TeacherLogin.png)
+![alt text](https://github.com/Saifalicoder/School-Management_System/blob/main/WinBuilder/src/GuiSwing2/Imgs/TeacherLogin.png)
