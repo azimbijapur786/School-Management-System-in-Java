@@ -59,7 +59,7 @@ public class LoginAs {
 	public LoginAs() {
 		frmLoginAs = new JFrame();
 		frmLoginAs.getContentPane().setBackground(Color.WHITE);
-		frmLoginAs.setTitle("Login As");
+		frmLoginAs.setTitle("Login as");
 		frmLoginAs.setBounds(100, 100, 1039, 602);
 		frmLoginAs.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmLoginAs.getContentPane().setLayout(null);
