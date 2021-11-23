@@ -167,22 +167,22 @@ public class Checkattend {
 		panel.add(dateChooser);
 		
 		SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-		 String date = df.format(dateChooser.getDate());
+		
 		 
 
 		JButton btnNewButton = new JButton("Check");
 		
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				textField_2.setText("date");
+				String date = df.format(dateChooser.getDate());
+			    System.out.println(date);
 			    Attendsheet as = new Attendsheet(username,usertype,standard,code, date);
 			    frame.setVisible(false);
 			}
 		});
 		btnNewButton.setFocusable(false);
 		btnNewButton.setBackground(UIManager.getColor("Button.background"));
-		btnNewButton.setForeground(Color.WHITE);
+		btnNewButton.setForeground(Color.BLACK);
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		btnNewButton.setBounds(245, 177, 96, 36);
 		panel.add(btnNewButton);

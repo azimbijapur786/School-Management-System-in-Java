@@ -155,7 +155,7 @@ public class TeacherLogin {
 		addAttendance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-					new AttendanceMark();
+				  Checkattend ca = new Checkattend (username,usertype,standard,code);
 					frmTeacherLogin.setVisible(false);
 				
 			}
@@ -253,6 +253,8 @@ public class TeacherLogin {
 		btnClassroom.setForeground(Color.WHITE);
 		btnClassroom.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Classroom cr = new Classroom(username,usertype,standard , code);
+				frmTeacherLogin.setVisible(false);
 			}
 		});
 		btnClassroom.setIcon(new ImageIcon(TeacherLogin.class.getResource("/GuiSwing2/Imgs/icons8-google-classroom-48.png")));
