@@ -6,13 +6,9 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Users/arkaanfaizadkhan/CoralCoast/School-Management_System/WinBuilder/mysql-connector-java-8.0.26.jar">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="WinBuilder/jcalendar-1.4.jar"/>
 	<classpathentry kind="lib" path="WinBuilder/jgoodies-forms-1.8.0-sources.jar"/>
 	<classpathentry kind="lib" path="WinBuilder/jgoodies-forms-1.8.0.jar"/>
+	<classpathentry kind="lib" path="D:/Java MIni Proj/School-Management_System/WinBuilder/mysql-connector-java-8.0.26.jar"/>
 	<classpathentry kind="output" path="WinBuilder/bin"/>
 </classpath>
