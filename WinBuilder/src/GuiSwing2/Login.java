@@ -66,6 +66,11 @@ public class Login {
 					TeacherLogin tl = new TeacherLogin(username,usertype,standard,code);
 					frmLogin.setVisible(false);
 				}
+				else
+				{
+					first attach = new first();
+					frmLogin.setVisible(false);
+				}
 			}
 		});
 		stdOk.setFocusable(false);
