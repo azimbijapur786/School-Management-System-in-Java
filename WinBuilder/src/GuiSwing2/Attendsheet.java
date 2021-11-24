@@ -149,7 +149,7 @@ public class Attendsheet {
 		 		{},
 		 	},
 		 	new String[] {
-		 		"code", "NAME", "Subject", "Email"
+		 		"id", "roll", "standard", "date","email"
 		 	}
 		 ));
 		 table.getColumnModel().getColumn(0).setPreferredWidth(71);
@@ -195,9 +195,8 @@ public class Attendsheet {
 			 int c;
 	            Class.forName("com.mysql.cj.jdbc.Driver"); //Register the mysql driver
 	            con1 = DriverManager.getConnection("jdbc:mysql://localhost/schoolmanagement","root","");
-	            insert = con1.prepareStatement("select * from attendance where standard=? and subject=? and date = ?");
-	            insert.setString(1,standard);
-	            insert.setString(2,sub);
+	            insert = con1.prepareStatement("select * from attendance where standard=? and date = ?");
+	            insert.setString(2,standard);
 	            insert.setString(3,date);
 	            
 	           
@@ -211,11 +210,11 @@ public class Attendsheet {
 	            	Vector v2 = new Vector();
 	            	
 	            	for(int a =1;a<=c;a++) {
-	            		v2.add(rs.getString("code"));
-	            		v2.add(rs.getString("name"));
-	            		v2.add(rs.getString("subject"));
+	            		v2.add(rs.getString("id"));
+	            		v2.add(rs.getString("roll"));
+	            		v2.add(rs.getString("standard"));
 	            		v2.add(rs.getString("date"));
-	            		v2.add(rs.getString("time"));
+	            		v2.add(rs.getString("email"));
 	            	}
 	            	Df.addRow(v2);
 	            }

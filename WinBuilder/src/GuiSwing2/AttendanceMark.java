@@ -2,8 +2,11 @@ package GuiSwing2;
 
 import java.awt.EventQueue;
 
+
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JRadioButton;
@@ -16,13 +19,19 @@ import javax.swing.JSpinner;
 import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JDateChooser;
 import javax.swing.SwingConstants;
+import java.sql.*;
+import java.text.DateFormat;
 
+import com.mysql.cj.jdbc.*;
 public class AttendanceMark {
 
 	private JFrame frmMarkAttendance;
 	private JTextField getRollAttd;
 	private JTextField getClassAttd;
 	private JDateChooser dateChooser;
+	Connection con;
+	java.sql.PreparedStatement pst;
+	private JTextField getEmail;
 	/**
 	 * Launch the application.
 	 */
@@ -48,6 +57,9 @@ public class AttendanceMark {
 	 * Initialize the contents of the frame.
 	 */
 	public AttendanceMark() {
+		
+		con=DatabaseForAttendanceConnect.dbconnect();
+		
 		frmMarkAttendance = new JFrame();
 		frmMarkAttendance.getContentPane().setBackground(new Color(250, 250, 210));
 		frmMarkAttendance.setTitle("Mark Attendance");
@@ -76,8 +88,38 @@ public class AttendanceMark {
 		frmMarkAttendance.getContentPane().add(classAttd);
 		
 		JButton markAttendance = new JButton("Mark");
+		markAttendance.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				try 
+				{	
+					  String rollno = getRollAttd.getText();
+					  String std = getClassAttd.getText();
+					  String date = dateChooser.getDateFormatString();
+					  String email = getEmail.getText();
+				 	con= DriverManager.getConnection("jdbc:mysql://localhost/schoolmanagement","root","");
+					pst = con.prepareStatement("INSERT INTO `attendance` (`id`, `roll`, `standard`, `date`, `email`) VALUES (NULL, '?', '?', '?', '?');");
+				
+//					pst.setString(1,rollno);
+//					pst.setString(2,std);
+//					pst.setString(3,date);
+//					pst.setString(4,email);
+			
+					pst.executeUpdate();
+					
+					JOptionPane.showMessageDialog(null,"Done");
+			         
+				} 
+				catch (SQLException e1) 
+				{
+					
+					e1.printStackTrace();
+				}
+		         
+			}
+		});
 		markAttendance.setFont(new Font("Times New Roman", Font.PLAIN, 22));
-		markAttendance.setBounds(120, 328, 99, 60);
+		markAttendance.setBounds(120, 369, 99, 60);
 		frmMarkAttendance.getContentPane().add(markAttendance);
 		
 		JButton clearAttd = new JButton("Clear");
@@ -87,10 +129,11 @@ public class AttendanceMark {
 				getRollAttd.setText(null);
 				getClassAttd.setText(null);
 				dateChooser.setDate(null);
+				getEmail.setText(null);
 			}
 		});
 		clearAttd.setFont(new Font("Times New Roman", Font.PLAIN, 22));
-		clearAttd.setBounds(303, 328, 99, 60);
+		clearAttd.setBounds(305, 369, 99, 60);
 		frmMarkAttendance.getContentPane().add(clearAttd);
 		
 		JButton backAttd = new JButton("Back");
@@ -103,7 +146,7 @@ public class AttendanceMark {
 			}
 		});
 		backAttd.setFont(new Font("Times New Roman", Font.PLAIN, 22));
-		backAttd.setBounds(481, 328, 99, 60);
+		backAttd.setBounds(483, 369, 99, 60);
 		frmMarkAttendance.getContentPane().add(backAttd);
 		
 		getRollAttd = new JTextField();
@@ -127,5 +170,16 @@ public class AttendanceMark {
 		dateChooser.getCalendarButton().setFont(new Font("Tahoma", Font.PLAIN, 15));
 		dateChooser.setBounds(288, 230, 152, 33);
 		frmMarkAttendance.getContentPane().add(dateChooser);
+		
+		JLabel lblEmail = new JLabel("Email :");
+		lblEmail.setFont(new Font("Times New Roman", Font.PLAIN, 25));
+		lblEmail.setBounds(67, 292, 192, 33);
+		frmMarkAttendance.getContentPane().add(lblEmail);
+		
+		getEmail = new JTextField();
+		getEmail.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		getEmail.setColumns(10);
+		getEmail.setBounds(288, 292, 246, 33);
+		frmMarkAttendance.getContentPane().add(getEmail);
 	}
 }
