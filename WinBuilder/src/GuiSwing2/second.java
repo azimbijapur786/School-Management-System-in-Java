@@ -51,6 +51,7 @@ public class second {
 		
 		
 		JButton btnNewButton = new JButton("");
+		btnNewButton.setFocusable(false);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				first first = new first();
@@ -62,6 +63,7 @@ public class second {
 		frmStudentProfile.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("");
+		btnNewButton_1.setFocusable(false);
 		btnNewButton_1.setIcon(new ImageIcon(second.class.getResource("/GuiSwing2/images/data-processing.png")));
 		btnNewButton_1.setBounds(302, 138, 163, 85);
 		frmStudentProfile.getContentPane().add(btnNewButton_1);
@@ -71,6 +73,7 @@ public class second {
 		frmStudentProfile.getContentPane().add(lblNewLabel);
 		
 		JButton btnNewButton_2 = new JButton("");
+		btnNewButton_2.setFocusable(false);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AddStudent student = new AddStudent();
@@ -88,6 +91,7 @@ public class second {
 		frmStudentProfile.getContentPane().add(lblNewLabel_1);
 		
 		JButton btnNewButton_3 = new JButton("");
+		btnNewButton_3.setFocusable(false);
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AddFees af = new AddFees();

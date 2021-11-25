@@ -59,6 +59,7 @@ public class first extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("");
+		btnNewButton.setFocusable(false);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AddTeacher go = new AddTeacher();
@@ -70,6 +71,7 @@ public class first extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("");
+		btnNewButton_1.setFocusable(false);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				second frameTwo  = new second();
@@ -81,6 +83,7 @@ public class first extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 JButton btnNewButton_3 = new JButton("");
+btnNewButton_3.setFocusable(false);
 		btnNewButton_3.setIcon(new ImageIcon(first.class.getResource("/GuiSwing2/images/turn-off (1).png")));
 		btnNewButton_3.setBounds(674, 6, 66, 44);
 		contentPane.add(btnNewButton_3);
