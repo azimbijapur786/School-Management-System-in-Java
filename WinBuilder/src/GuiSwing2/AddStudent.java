@@ -23,6 +23,7 @@ import javax.swing.SwingConstants;
 
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.net.URL;
 import java.nio.file.Path;
 import java.awt.event.ActionEvent;
 import javax.swing.UIManager;
@@ -136,15 +137,16 @@ public class AddStudent {
 		
 		JButton btnChooseImage = new JButton("Choose Photo");
 		btnChooseImage.setHorizontalAlignment(SwingConstants.LEFT);
-		btnChooseImage.setIcon(new ImageIcon("D:\\java\\javaproj\\JavaProject\\src\\images\\folder_red.png"));
+		btnChooseImage.setIcon(new ImageIcon(AddStudent.class.getResource("/GuiSwing2/Imgs/folder_red.png")));
 		btnChooseImage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				
 				
 				
-				
-				  JFileChooser fc=new JFileChooser("D:\\java\\images");    
+				 String currentDirectory = System.getProperty("user.dir");
+				  JFileChooser fc=new JFileChooser(currentDirectory+"\\WinBuilder\\src\\GuiSwing2\\images\\");
+//				  fc.setCurrentDirectory(new File("D:\\Java\\Images"));
 				    int i=fc.showOpenDialog(frmCoralCoastInternational);    
 				    Path temp = null;
 				    if(i==JFileChooser.APPROVE_OPTION){   
@@ -153,7 +155,8 @@ public class AddStudent {
 				    	
 				
 				        File f=fc.getSelectedFile();    
-				        filepath=f.getPath();   
+				        filepath=f.getPath();  
+		
 				        ImageIcon icon = new ImageIcon(filepath);
 				    	Image image = icon.getImage();
 				    	Image imgscale = image.getScaledInstance(lblNewLabel_x.getWidth(),lblNewLabel_x.getHeight(),Image.SCALE_SMOOTH);
