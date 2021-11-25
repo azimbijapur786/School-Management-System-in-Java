@@ -26,12 +26,12 @@ import com.mysql.cj.jdbc.*;
 public class AttendanceMark {
 
 	private JFrame frmMarkAttendance;
-	private JTextField getRollAttd;
-	private JTextField getClassAttd;
-	private JDateChooser dateChooser;
+	JTextField getRollAttd;
+	JTextField getClassAttd;
+	JDateChooser dateChooser;
 	Connection con;
 	java.sql.PreparedStatement pst;
-	private JTextField getEmail;
+	JTextField getEmail;
 	/**
 	 * Launch the application.
 	 */
@@ -98,7 +98,7 @@ public class AttendanceMark {
 					  String date = dateChooser.getDateFormatString();
 					  String email = getEmail.getText();
 				 	con= DriverManager.getConnection("jdbc:mysql://localhost/schoolmanagement","root","");
-					pst = con.prepareStatement("INSERT INTO `attendance` (`id`, `roll`, `standard`, `date`, `email`) VALUES (NULL, '?', '?', '?', '?');");
+					pst = con.prepareStatement("INSERT INTO `attendance` (`id`, `roll`, `standard`, `date`, `email`) VALUES (NULL, '"+rollno+"', '"+std+"', '"+date+"', '"+email+"');");
 				
 //					pst.setString(1,rollno);
 //					pst.setString(2,std);
