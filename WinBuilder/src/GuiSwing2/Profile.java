@@ -59,8 +59,8 @@ public class Profile {
 	static String username ;
 	static String usertype;
 	public static String standard;
-	static String rollno ;
-	static String code;
+	static String code ;
+
 	public static String email;
 	public static String mobileno;
 	static String name ;
@@ -75,11 +75,12 @@ private final ButtonGroup buttonGroup = new ButtonGroup();
 	/**
 	 * Launch the application.
 	 */
-public Profile(String usern,String usert , String stand, String rn) {
+public Profile(String usern,String usert , String stand, String code) {
 	this.username = usern;
 	this.usertype = usert;
 	this.standard = stand;
 	this.code = code;
+//	System.out.println(username+" "+usertype+" "+ standard +" "+code);
 	load_table() ;
 	initialize();
 }
@@ -127,7 +128,7 @@ public Profile(String usern,String usert , String stand, String rn) {
 		if(usertype=="Student") {
 			prof= usertype+" Profile";
 		}
-		JLabel lblNewLabel = new JLabel(prof);
+		JLabel lblNewLabel = new JLabel("Teacher Profile");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(10, 10, 1067, 51);
 		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 38));
@@ -165,7 +166,7 @@ public Profile(String usern,String usert , String stand, String rn) {
 		btnLoginPage.setIcon(new ImageIcon("D:\\java\\javaproj\\JavaProject\\src\\images\\back.png"));
 		btnLoginPage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				Mainmenu mm = new Mainmenu(username,usertype,standard, rollno);
+//				Mainmenu mm = new Mainmenu(username,usertype,standard, code);
 				TeacherLogin Tl = new TeacherLogin(username,usertype,standard,code);
 				 frame.setVisible(false);
 				 frame.setVisible(false);
@@ -188,14 +189,6 @@ public Profile(String usern,String usert , String stand, String rn) {
 		lblNewLabel_1_1_1_1_1.setFont(new Font("Times New Roman", Font.BOLD, 23));
 		lblNewLabel_1_1_1_1_1.setBounds(87, 292, 135, 45);
 		panel_1.add(lblNewLabel_1_1_1_1_1);
-		
-		
-		
-		JLabel lblNewLabel_1_1_1_1_1_1_1 = new JLabel("DOB :");
-		lblNewLabel_1_1_1_1_1_1_1.setForeground(Color.BLACK);
-		lblNewLabel_1_1_1_1_1_1_1.setFont(new Font("Times New Roman", Font.BOLD, 23));
-		lblNewLabel_1_1_1_1_1_1_1.setBounds(87, 347, 135, 45);
-		panel_1.add(lblNewLabel_1_1_1_1_1_1_1);
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new LineBorder(new Color(0, 0, 0), 4));
@@ -265,35 +258,17 @@ public Profile(String usern,String usert , String stand, String rn) {
 		lblNewLabel_1_1_1_3_3.setBounds(232, 292, 135, 45);
 		panel_1.add(lblNewLabel_1_1_1_3_3);
 		
-		JLabel lblNewLabel_1_1_1_3_4 = new JLabel(dob);
-		lblNewLabel_1_1_1_3_4.setForeground(Color.BLACK);
-		lblNewLabel_1_1_1_3_4.setFont(new Font("Times New Roman", Font.BOLD, 23));
-		lblNewLabel_1_1_1_3_4.setBounds(232, 347, 229, 45);
-		panel_1.add(lblNewLabel_1_1_1_3_4);
-		
-		
-		if(usertype=="Student") {
-			JLabel lblNewLabel_1_5 = new JLabel("Roll no :");
-			lblNewLabel_1_5.setForeground(Color.BLACK);
-			lblNewLabel_1_5.setFont(new Font("Times New Roman", Font.BOLD, 23));
-			lblNewLabel_1_5.setBackground(Color.WHITE);
-			lblNewLabel_1_5.setBounds(705, 226, 106, 45);
-			panel_1.add(lblNewLabel_1_5);
-			
-			JLabel lblNewLabel_1_1_1_3_3_1 = new JLabel(rollno);
-			lblNewLabel_1_1_1_3_3_1.setForeground(Color.RED);
-			lblNewLabel_1_1_1_3_3_1.setFont(new Font("Times New Roman", Font.BOLD, 23));
-			lblNewLabel_1_1_1_3_3_1.setBounds(811, 226, 135, 45);
-			panel_1.add(lblNewLabel_1_1_1_3_3_1);
-		}
-		else {
 			JLabel lblNewLabel_1_3 = new JLabel("Code :");
 			lblNewLabel_1_3.setForeground(Color.BLACK);
 			lblNewLabel_1_3.setFont(new Font("Times New Roman", Font.BOLD, 23));
 			lblNewLabel_1_3.setBackground(Color.WHITE);
 			lblNewLabel_1_3.setBounds(850, 271, 135, 45);
 			panel_1.add(lblNewLabel_1_3);
-		}
+			JLabel lblNewLabel_1_1_1_3_3_1 = new JLabel(code);
+			lblNewLabel_1_1_1_3_3_1.setForeground(Color.RED);
+			lblNewLabel_1_1_1_3_3_1.setFont(new Font("Times New Roman", Font.BOLD, 23));
+			lblNewLabel_1_1_1_3_3_1.setBounds(924, 271, 135, 45);
+			panel_1.add(lblNewLabel_1_1_1_3_3_1);
 		
 		
 	}
@@ -301,9 +276,9 @@ public Profile(String usern,String usert , String stand, String rn) {
 		 try {
 			 int c;
 	            Class.forName("com.mysql.cj.jdbc.Driver"); //Register the mysql driver
-	            con1 = DriverManager.getConnection("jdbc:mysql://localhost/schoolmanagement","root","");
-	            insert = con1.prepareStatement("select * from students where rollno =? ");
-	            insert.setString(1,rollno);
+	            con1 = DriverManager.getConnection("jdbc:mysql://localhost/students","root","");
+	            insert = con1.prepareStatement("select * from teachers where code = ? ");
+	            insert.setString(1,code);
 	            
 	           
 	           rs= insert.executeQuery();
@@ -311,11 +286,11 @@ public Profile(String usern,String usert , String stand, String rn) {
 	        	  	uname = rs.getString("username");
 	            	name = rs.getString("name");
 	            	mobileno = rs.getString("mobile");
-	            	rollno = rs.getString("rollno");
+	            	code = rs.getString("code");
 	            	email = rs.getString("email");
 	            	
 	            	gender = rs.getString("gender");
-	            	dob = rs.getString("dob");
+	            
 	            	imagepath = rs.getString("image");
 	          }
 	            

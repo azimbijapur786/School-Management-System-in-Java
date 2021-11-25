@@ -4,17 +4,30 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+
+
+
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
 import javax.swing.ImageIcon;
 
 public class Login {
-
+	public static PreparedStatement insert;
+	public static ResultSet rs;
+	public static Connection con1;
 	private JFrame frmLogin;
 	private JTextField unameStd;
 	private JPasswordField passwordField;
@@ -23,6 +36,7 @@ public class Login {
 	public static String standard;
 	public static String rollno;
 	public static String code;
+	public static String name;
 	
 	public Login(String usertype) {
 		this.usertype=usertype;
@@ -55,21 +69,91 @@ public class Login {
 		frmLogin.getContentPane().add(unameStd);
 		unameStd.setColumns(10);
 		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(230, 116, 189, 30);
+		frmLogin.getContentPane().add(passwordField);
+		
 		JButton stdOk = new JButton("OK");
 		stdOk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String user = unameStd.getText();
+				String pass = passwordField.getText();
+				
+				
 				if(usertype=="student") {
 					StudentLogin sl = new StudentLogin();
 					frmLogin.setVisible(false);
 				}
 				else if(usertype=="teacher") {
-					TeacherLogin tl = new TeacherLogin(username,usertype,standard,code);
-					frmLogin.setVisible(false);
+					
+					 try {
+				            Class.forName("com.mysql.cj.jdbc.Driver"); //Register the mysql driver
+				            con1 = DriverManager.getConnection("jdbc:mysql://localhost/students","root","");
+				            insert = con1.prepareStatement("select name,standard,code from teachers where username = ? and pass = ? ");
+				            insert.setString(1,user);
+				            insert.setString(2,pass);
+				           
+				           rs= insert.executeQuery();
+				            if(rs.next()==false) {
+				            	JOptionPane.showMessageDialog(null,"Teacher Not Found", "ERROR", JOptionPane.PLAIN_MESSAGE);
+				            }
+				            else {
+				            	name = rs.getString("name");
+				            	standard = rs.getString("standard");
+				            	rollno = rs.getString("code");
+				            	TeacherLogin tl = new TeacherLogin(name,usertype,standard,rollno);
+								frmLogin.setVisible(false);
+						
+				            
+				            }
+				            
+				        } catch (ClassNotFoundException ex) {
+				        	 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+				        } catch (SQLException ex) {
+				        	 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+				        } 
+					
+					
+					
+					
+					
+					
+					
+					
+				
 				}
 				else
 				{
-					first attach = new first();
-					frmLogin.setVisible(false);
+					 try {
+				            Class.forName("com.mysql.cj.jdbc.Driver"); //Register the mysql driver
+				            con1 = DriverManager.getConnection("jdbc:mysql://localhost/students","root","");
+				            insert = con1.prepareStatement("select * from admin where username = ? and pass = ? ");
+				            insert.setString(1,user);
+				            insert.setString(2,pass);
+				           
+				           rs= insert.executeQuery();
+				            if(rs.next()==false) {
+				            	JOptionPane.showMessageDialog(null,"Admin Not Found", "ERROR", JOptionPane.PLAIN_MESSAGE);
+				            }
+				            else {
+				            	first first = new first();
+				            	
+								
+				            	first attach = new first();
+								frmLogin.setVisible(false);
+				            	
+				            }
+				            
+				        } catch (ClassNotFoundException ex) {
+				        	 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+				        } catch (SQLException ex) {
+				        	JOptionPane.showMessageDialog(null,"Check Database Connection", "ERROR", JOptionPane.PLAIN_MESSAGE);
+//				        	 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+				        } 
+					
+//					
+//					first attach = new first();
+//					frmLogin.setVisible(false);
 				}
 			}
 		});
@@ -105,9 +189,7 @@ public class Login {
 		loginBack.setBounds(299, 187, 89, 40);
 		frmLogin.getContentPane().add(loginBack);
 		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(230, 116, 189, 30);
-		frmLogin.getContentPane().add(passwordField);
+	
 	}
 
 	/**

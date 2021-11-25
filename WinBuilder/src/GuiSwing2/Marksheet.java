@@ -96,6 +96,7 @@ public class Marksheet {
 		this.standard = standard;
 		this.username = user;
 		this.usertype = usert;
+		System.out.println(username+" "+usertype+" "+ standard +" "+code);
 		initialize();
 	}
 	public static void main(String[] args) {

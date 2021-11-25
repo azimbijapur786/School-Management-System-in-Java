@@ -63,6 +63,7 @@ public class TeacherLogin {
 			this.usertype=usertype;
 			this.standard=standard;
 			this.code=code;
+//			System.out.println(username+" "+usertype+" "+ standard +" "+code);
 			
 		frmTeacherLogin = new JFrame();
 		frmTeacherLogin.getContentPane().setBackground(new Color(255, 240, 245));

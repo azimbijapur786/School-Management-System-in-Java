@@ -55,14 +55,14 @@ public class first extends JFrame {
 		lblNewLabel.setBackground(new Color(255, 255, 255));
 		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 22));
 		lblNewLabel.setForeground(new Color(255, 69, 0));
-		lblNewLabel.setBounds(322, 32, 186, 117);
+		lblNewLabel.setBounds(307, 41, 142, 117);
 		contentPane.add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("");
 		btnNewButton.setFocusable(false);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AddTeacher go = new AddTeacher();
+				AddTch at = new AddTch();
 				dispose();
 			}
 		});
@@ -83,17 +83,23 @@ public class first extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 JButton btnNewButton_3 = new JButton("");
+btnNewButton_3.addActionListener(new ActionListener() {
+	public void actionPerformed(ActionEvent e) {
+		LoginAs la = new LoginAs();
+		setVisible(false);
+	}
+});
 btnNewButton_3.setFocusable(false);
 		btnNewButton_3.setIcon(new ImageIcon(first.class.getResource("/GuiSwing2/images/turn-off (1).png")));
 		btnNewButton_3.setBounds(674, 6, 66, 44);
 		contentPane.add(btnNewButton_3);
 		
 		JLabel lblNewLabel_1 = new JLabel("MANAGE STUDENT");
-		lblNewLabel_1.setBounds(190, 319, 118, 16);
+		lblNewLabel_1.setBounds(190, 319, 116, 16);
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("MANAGE TEACHER");
-		lblNewLabel_2.setBounds(416, 319, 124, 16);
+		JLabel lblNewLabel_2 = new JLabel("ADD TEACHER");
+		lblNewLabel_2.setBounds(438, 319, 92, 16);
 		contentPane.add(lblNewLabel_2);
 	}
 }
