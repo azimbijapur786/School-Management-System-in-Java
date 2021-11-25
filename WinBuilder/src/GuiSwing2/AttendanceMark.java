@@ -100,7 +100,7 @@ public class AttendanceMark {
 					  String date = df.format(datechooser.getDate());
 					  String email = getEmail.getText();
 				 	con= DriverManager.getConnection("jdbc:mysql://localhost:3306/students","root","");
-					pst = con.prepareStatement("INSERT INTO information(id,roll,standard,date,email)"+" VALUES(NULL,?,?,?,?);");
+					pst = con.prepareStatement("INSERT INTO attendance(id,roll,standard,date,email)"+" VALUES(NULL,?,?,?,?);");
 				
 					pst.setString(1,rollno);
 					pst.setString(2,std);
