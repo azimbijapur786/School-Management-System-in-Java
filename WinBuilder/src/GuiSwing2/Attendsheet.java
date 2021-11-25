@@ -194,7 +194,7 @@ public class Attendsheet {
 		 try {
 			 int c;
 	            Class.forName("com.mysql.cj.jdbc.Driver"); //Register the mysql driver
-	            con1 = DriverManager.getConnection("jdbc:mysql://localhost/schoolmanagement","root","");
+	            con1 = DriverManager.getConnection("jdbc:mysql://localhost/students","root","");
 	            insert = con1.prepareStatement("select * from attendance where standard=? and date = ?");
 	            insert.setString(2,standard);
 	            insert.setString(3,date);

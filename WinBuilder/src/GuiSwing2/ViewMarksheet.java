@@ -84,7 +84,7 @@ public class ViewMarksheet {
 		getClassMarksheet.setBounds(175, 175, 159, 35);
 		frmViewMarksheet.getContentPane().add(getClassMarksheet);
 		
-		JButton getMarksheetBtn = new JButton("Get Makrsheet");
+		JButton getMarksheetBtn = new JButton("Get Marksheet");
 		getMarksheetBtn.setFont(new Font("Times New Roman", Font.PLAIN, 22));
 		getMarksheetBtn.setBounds(61, 245, 183, 53);
 		frmViewMarksheet.getContentPane().add(getMarksheetBtn);
