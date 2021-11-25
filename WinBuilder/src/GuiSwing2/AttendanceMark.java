@@ -21,6 +21,7 @@ import com.toedter.calendar.JDateChooser;
 import javax.swing.SwingConstants;
 import java.sql.*;
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 import com.mysql.cj.jdbc.*;
 public class AttendanceMark {
@@ -28,10 +29,10 @@ public class AttendanceMark {
 	private JFrame frmMarkAttendance;
 	JTextField getRollAttd;
 	JTextField getClassAttd;
-	JDateChooser dateChooser;
 	Connection con;
 	java.sql.PreparedStatement pst;
 	JTextField getEmail;
+	JDateChooser datechooser;
 	/**
 	 * Launch the application.
 	 */
@@ -95,15 +96,16 @@ public class AttendanceMark {
 				{	
 					  String rollno = getRollAttd.getText();
 					  String std = getClassAttd.getText();
-					  String date = dateChooser.getDateFormatString();
+					  SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+					  String date = df.format(datechooser.getDate());
 					  String email = getEmail.getText();
-				 	con= DriverManager.getConnection("jdbc:mysql://localhost/schoolmanagement","root","");
-					pst = con.prepareStatement("INSERT INTO `attendance` (`id`, `roll`, `standard`, `date`, `email`) VALUES (NULL, '"+rollno+"', '"+std+"', '"+date+"', '"+email+"');");
+				 	con= DriverManager.getConnection("jdbc:mysql://localhost:3306/students","root","");
+					pst = con.prepareStatement("INSERT INTO information(id,roll,standard,date,email)"+" VALUES(NULL,?,?,?,?);");
 				
-//					pst.setString(1,rollno);
-//					pst.setString(2,std);
-//					pst.setString(3,date);
-//					pst.setString(4,email);
+					pst.setString(1,rollno);
+					pst.setString(2,std);
+					pst.setString(3,date);
+					pst.setNString(4, email);
 			
 					pst.executeUpdate();
 					
@@ -128,8 +130,8 @@ public class AttendanceMark {
 			{
 				getRollAttd.setText(null);
 				getClassAttd.setText(null);
-				dateChooser.setDate(null);
 				getEmail.setText(null);
+				datechooser.setDate(null);
 			}
 		});
 		clearAttd.setFont(new Font("Times New Roman", Font.PLAIN, 22));
@@ -161,16 +163,6 @@ public class AttendanceMark {
 		frmMarkAttendance.getContentPane().add(getClassAttd);
 		getClassAttd.setColumns(10);
 		
-		JLabel dateAttd = new JLabel("Date (dd/mm/yy):");
-		dateAttd.setFont(new Font("Times New Roman", Font.PLAIN, 25));
-		dateAttd.setBounds(67, 230, 192, 33);
-		frmMarkAttendance.getContentPane().add(dateAttd);
-		
-		 dateChooser = new JDateChooser();
-		dateChooser.getCalendarButton().setFont(new Font("Tahoma", Font.PLAIN, 15));
-		dateChooser.setBounds(288, 230, 152, 33);
-		frmMarkAttendance.getContentPane().add(dateChooser);
-		
 		JLabel lblEmail = new JLabel("Email :");
 		lblEmail.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 		lblEmail.setBounds(67, 292, 192, 33);
@@ -181,5 +173,15 @@ public class AttendanceMark {
 		getEmail.setColumns(10);
 		getEmail.setBounds(288, 292, 246, 33);
 		frmMarkAttendance.getContentPane().add(getEmail);
+		
+		JLabel lblDate = new JLabel("Date (MM-DD--YY) :");
+		lblDate.setFont(new Font("Times New Roman", Font.PLAIN, 25));
+		lblDate.setBounds(67, 235, 219, 23);
+		frmMarkAttendance.getContentPane().add(lblDate);
+		
+		datechooser = new JDateChooser();
+		datechooser.getCalendarButton().setFont(new Font("Tahoma", Font.PLAIN, 15));
+		datechooser.setBounds(288, 225, 171, 33);
+		frmMarkAttendance.getContentPane().add(datechooser);
 	}
 }
