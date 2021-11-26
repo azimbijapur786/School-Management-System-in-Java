@@ -66,9 +66,9 @@ public class TeacherLogin {
 //			System.out.println(username+" "+usertype+" "+ standard +" "+code);
 			
 		frmTeacherLogin = new JFrame();
-		frmTeacherLogin.getContentPane().setBackground(new Color(255, 240, 245));
+		frmTeacherLogin.getContentPane().setBackground(new Color(255, 228, 196));
 		frmTeacherLogin.setTitle("Studen Login");
-		frmTeacherLogin.setBounds(100, 100, 1191, 772);
+		frmTeacherLogin.setBounds(100, 100, 1104, 646);
 		frmTeacherLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmTeacherLogin.getContentPane().setLayout(null);
 		frmTeacherLogin.setVisible(true);
@@ -78,7 +78,7 @@ public class TeacherLogin {
 		JPanel titlestdPanel = new JPanel();
 		titlestdPanel.setBackground(new Color(240, 230, 140));
 		titlestdPanel.setBorder(new LineBorder(new Color(0, 0, 0), 3));
-		titlestdPanel.setBounds(21, 19, 1146, 97);
+		titlestdPanel.setBounds(21, 19, 1051, 97);
 		frmTeacherLogin.getContentPane().add(titlestdPanel);
 		titlestdPanel.setLayout(null);
 		
@@ -93,7 +93,7 @@ public class TeacherLogin {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JLabel schoolName = new JLabel("K.C.GANDHI ENGLISH SCHOOL");
-		schoolName.setBounds(0, 0, 1146, 97);
+		schoolName.setBounds(0, 0, 1047, 97);
 		titlestdPanel.add(schoolName);
 		schoolName.setHorizontalAlignment(SwingConstants.CENTER);
 		schoolName.setBackground(new Color(255, 240, 245));
@@ -103,13 +103,13 @@ public class TeacherLogin {
 		JPanel libimgPanel = new JPanel();
 		libimgPanel.setBackground(new Color(255, 248, 220));
 		libimgPanel.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		libimgPanel.setBounds(21, 242, 1146, 368);
+		libimgPanel.setBounds(314, 232, 760, 366);
 		frmTeacherLogin.getContentPane().add(libimgPanel);
 		libimgPanel.setLayout(null);
 		
 		JLabel Library = new JLabel("");
 		Library.setBorder(new LineBorder(new Color(0, 0, 0), 2));
-		Library.setBounds(0, 0, 588, 368);
+		Library.setBounds(0, 0, 760, 364);
 		libimgPanel.add(Library);
 //		Library.setIcon(new ImageIcon("C:\\Users\\hp\\Desktop\\Java\\Eclipse\\WinBuilder\\src\\GuiSwing2\\library2.jfif"));
 		ImageIcon icon = new ImageIcon(LoginAs.class.getResource("/GuiSwing2/imgs/Complab.jpg"));
@@ -117,31 +117,6 @@ public class TeacherLogin {
     	Image imgscale = image.getScaledInstance(Library.getWidth(),Library.getHeight(),Image.SCALE_SMOOTH);
     	ImageIcon scaledicon = new ImageIcon(imgscale);
 	Library.setIcon(scaledicon);
-	
-	JPanel panel_1 = new JPanel();
-	panel_1.setBackground(new Color(60, 179, 113));
-	panel_1.setBounds(598, 0, 548, 67);
-	libimgPanel.add(panel_1);
-	panel_1.setLayout(null);
-	
-	JLabel lblNewLabel_1 = new JLabel("My Notes");
-	lblNewLabel_1.setForeground(Color.WHITE);
-	lblNewLabel_1.setIcon(new ImageIcon(TeacherLogin.class.getResource("/GuiSwing2/Imgs/contract.png")));
-	lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 27));
-	lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-	lblNewLabel_1.setBounds(10, 10, 528, 47);
-	panel_1.add(lblNewLabel_1);
-	
-	JScrollPane scrollPane = new JScrollPane();
-	scrollPane.setBounds(598, 67, 548, 301);
-	libimgPanel.add(scrollPane);
-	
-	JTextArea textArea = new JTextArea();
-	textArea.setToolTipText("");
-	textArea.setForeground(new Color(0, 0, 0));
-	textArea.setFont(new Font("Times New Roman", Font.ITALIC, 20));
-	textArea.setLineWrap(true);
-	scrollPane.setViewportView(textArea);
 		
 		JLabel logoStd = new JLabel("");
 		logoStd.setIcon(new ImageIcon("C:\\Users\\hp\\Desktop\\Java\\Eclipse\\WinBuilder\\src\\GuiSwing2\\logo5.jfif"));
@@ -155,7 +130,7 @@ public class TeacherLogin {
 		addAttendance.setFocusable(false);
 		addAttendance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
-			{
+			{ 
 				  Checkattend ca = new Checkattend (username,usertype,standard,code);
 					frmTeacherLogin.setVisible(false);
 				
@@ -163,7 +138,7 @@ public class TeacherLogin {
 		});
 		addAttendance.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		addAttendance.setBackground(new Color(255, 99, 71));
-		addAttendance.setBounds(615, 136, 276, 86);
+		addAttendance.setBounds(21, 422, 283, 86);
 		frmTeacherLogin.getContentPane().add(addAttendance);
 		
 		JButton viewMarks = new JButton(" Add Marksheet");
@@ -180,7 +155,7 @@ public class TeacherLogin {
 			}
 		});
 		viewMarks.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		viewMarks.setBounds(314, 136, 291, 86);
+		viewMarks.setBounds(21, 326, 283, 86);
 		frmTeacherLogin.getContentPane().add(viewMarks);
 		
 		JButton viewFee = new JButton("Announcements");
@@ -197,7 +172,7 @@ public class TeacherLogin {
 			}
 		});
 		viewFee.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		viewFee.setBounds(316, 631, 296, 83);
+		viewFee.setBounds(725, 136, 349, 83);
 		frmTeacherLogin.getContentPane().add(viewFee);
 		
 		JButton logoutStd = new JButton("Logout");
@@ -214,7 +189,7 @@ public class TeacherLogin {
 			}
 		});
 		logoutStd.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		logoutStd.setBounds(908, 631, 259, 83);
+		logoutStd.setBounds(21, 518, 283, 83);
 		frmTeacherLogin.getContentPane().add(logoutStd);
 		
 		JButton btnProfile = new JButton("Profile");
@@ -229,8 +204,8 @@ public class TeacherLogin {
 		});
 		btnProfile.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnProfile.setFocusable(false);
-		btnProfile.setBackground(new Color(255, 99, 71));
-		btnProfile.setBounds(21, 136, 283, 86);
+		btnProfile.setBackground(new Color(147, 112, 219));
+		btnProfile.setBounds(21, 134, 345, 86);
 		frmTeacherLogin.getContentPane().add(btnProfile);
 		
 		JButton btnTimeTable = new JButton("Time Table");
@@ -245,8 +220,8 @@ public class TeacherLogin {
 		btnTimeTable.setIcon(new ImageIcon(TeacherLogin.class.getResource("/GuiSwing2/Imgs/icons8-calendar-48.png")));
 		btnTimeTable.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnTimeTable.setFocusable(false);
-		btnTimeTable.setBackground(new Color(255, 99, 71));
-		btnTimeTable.setBounds(901, 136, 266, 86);
+		btnTimeTable.setBackground(new Color(147, 112, 219));
+		btnTimeTable.setBounds(376, 136, 339, 86);
 		frmTeacherLogin.getContentPane().add(btnTimeTable);
 		
 		JButton btnClassroom = new JButton("Classroom");
@@ -261,18 +236,10 @@ public class TeacherLogin {
 		btnClassroom.setIcon(new ImageIcon(TeacherLogin.class.getResource("/GuiSwing2/Imgs/icons8-google-classroom-48.png")));
 		btnClassroom.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnClassroom.setFocusable(false);
-		btnClassroom.setBackground(new Color(123, 104, 238));
-		btnClassroom.setBounds(21, 630, 283, 84);
+		btnClassroom.setBackground(new Color(255, 99, 71));
+		btnClassroom.setBounds(21, 232, 283, 84);
 		frmTeacherLogin.getContentPane().add(btnClassroom);
 		
-		JButton btnSaveNote = new JButton("Save Note");
-		btnSaveNote.setBorderPainted(false);
-		btnSaveNote.setIcon(new ImageIcon(TeacherLogin.class.getResource("/GuiSwing2/Imgs/diskette.png")));
-		btnSaveNote.setForeground(Color.WHITE);
-		btnSaveNote.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		btnSaveNote.setFocusable(false);
-		btnSaveNote.setBackground(new Color(60, 179, 113));
-		btnSaveNote.setBounds(622, 631, 276, 83);
-		frmTeacherLogin.getContentPane().add(btnSaveNote);
+		
 	}
 }

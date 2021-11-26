@@ -68,20 +68,30 @@ public class LoginAs {
 		frmLoginAs.setLocationRelativeTo(null);
 		
 		Title = new JPanel();
-		Title.setBackground(new Color(240, 230, 140));
+		Title.setBackground(new Color(255, 250, 205));
 		Title.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		Title.setBounds(10, 8, 1005, 87);
+		Title.setBounds(10, 10, 1005, 87);
 		frmLoginAs.getContentPane().add(Title);
 		Title.setLayout(null);
 		
+		JLabel logo = new JLabel("");
+		logo.setBounds(10, 10, 66, 67);
+		Title.add(logo);
+		logo.setIcon(new ImageIcon(LoginAs.class.getResource("/GuiSwing2/logo.jpg")));
+		
 		JLabel greet = new JLabel("K.C.Gandhi English School");
-		greet.setBorder(new LineBorder(new Color(0, 0, 0), 4));
-		greet.setForeground(new Color(255, 0, 0));
-		greet.setHorizontalAlignment(SwingConstants.CENTER);
 		greet.setBounds(0, 0, 1005, 87);
 		Title.add(greet);
+		greet.setBorder(new LineBorder(new Color(0, 0, 0), 4));
+		greet.setForeground(new Color(139, 0, 0));
+		greet.setHorizontalAlignment(SwingConstants.CENTER);
 		greet.setBackground(Color.WHITE);
 		greet.setFont(new Font("Times New Roman", Font.BOLD, 30));
+		
+		JLabel logo_1 = new JLabel("");
+		logo_1.setIcon(new ImageIcon(LoginAs.class.getResource("/GuiSwing2/Imgs/sun.jpeg")));
+		logo_1.setBounds(929, 10, 66, 67);
+		Title.add(logo_1);
 		
 		JPanel LogRadioPanel = new JPanel();
 		LogRadioPanel.setBackground(new Color(255, 99, 71));
@@ -107,7 +117,7 @@ public class LoginAs {
 		teacher.setForeground(Color.WHITE);
 		teacher.setBackground(new Color(255, 99, 71));
 		bg.add(teacher);
-		teacher.setFont(new Font("Times New Roman", Font.BOLD, 21));
+		teacher.setFont(new Font("Times New Roman", Font.BOLD, 24));
 		
 		JRadioButton student = new JRadioButton("Student");
 		student.setHorizontalAlignment(SwingConstants.CENTER);
@@ -128,7 +138,7 @@ public class LoginAs {
 	
 		student.setBackground(new Color(255, 99, 71));
 		bg.add(student);
-		student.setFont(new Font("Times New Roman", Font.BOLD, 21));
+		student.setFont(new Font("Times New Roman", Font.BOLD, 24));
 		
 		JRadioButton admin = new JRadioButton("Admin");
 		admin.setIcon(null);
@@ -148,7 +158,7 @@ public class LoginAs {
 		admin.setForeground(Color.WHITE);
 		admin.setBackground(new Color(255, 99, 71));
 		bg.add(admin);
-		admin.setFont(new Font("Times New Roman", Font.BOLD, 21));
+		admin.setFont(new Font("Times New Roman", Font.BOLD, 24));
 		
 		JLabel Loginas = new JLabel("Login As :");
 		Loginas.setBackground(new Color(106, 90, 205));
@@ -172,11 +182,6 @@ public class LoginAs {
 		proceed.setFont(new Font("Times New Roman", Font.PLAIN, 22));
 		proceed.setBounds(876, 492, 139, 66);
 		frmLoginAs.getContentPane().add(proceed);
-		
-		JLabel logo = new JLabel("");
-		logo.setIcon(new ImageIcon("C:\\Users\\hp\\Desktop\\Java\\Eclipse\\WinBuilder\\src\\GuiSwing2\\logo5.jfif"));
-		logo.setBounds(39, 8, 66, 95);
-		frmLoginAs.getContentPane().add(logo);
 		
 		JLabel schoolImg = new JLabel("");
 		schoolImg.setBounds(10, 102, 523, 380);
@@ -206,10 +211,11 @@ public class LoginAs {
 	frmLoginAs.getContentPane().add(scrollPane);
 	
 	JTextArea txtrTheCollegeWas = new JTextArea();
+	txtrTheCollegeWas.setWrapStyleWord(true);
 	txtrTheCollegeWas.setEditable(false);
 	txtrTheCollegeWas.setFocusable(false);
 	scrollPane.setViewportView(txtrTheCollegeWas);
-	txtrTheCollegeWas.setText("            The college was established with a definte mission to disseminate a value-oriented quality technical education among our youth to fulfil the increasing demand of human resources for the ever-growing engineering industry of our nation, which it has truly proved to the core.The Mohammed Haji Saboo Siddik Institute (A Muslim Minority Institution) owes its existence to the munificence of late Mohammed, son of Haji Saboo Siddik, who bequeathed a large sum of money for establishing, conducting and managing this Institution for imparting Vocational, Technical and Industrial training and education. The value of the assets, so bequeathed, exceeded Rupees Three Crore at the time of donation.");
+	txtrTheCollegeWas.setText("            K.C.Gandhi English School was founded in 2000 by Shri C.Gandhi in Kalyan.His sole aim being   imparting good quailty eduaction to the students.The  school occupies a vast area of 2 acre with a huge playground.Our school is equipped with modern classrooms,science lab,IT lab, library and a canteen.Within these years K.C.Gandhi school has gained immense popularity due to the efforts of its teachers and their bright  students.The school ranks among the top 3 in Kalyan.The school environment is surrounded by a lot of trees and exotic plants which keeps the atmosphere here cool and pleasant. ");
 	txtrTheCollegeWas.setLineWrap(true);
 	txtrTheCollegeWas.setFont(new Font("Times New Roman", Font.BOLD, 19));
 //		schoolImg.setIcon(new ImageIcon(LoginAs.class.getResource("/GuiSwing2/school.png")));

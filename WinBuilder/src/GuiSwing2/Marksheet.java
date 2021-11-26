@@ -197,6 +197,7 @@ public class Marksheet {
 		comboBox.setFocusTraversalKeysEnabled(false);
 		comboBox.setFocusable(false);
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"8", "9", "10"}));
+		comboBox.setSelectedItem(standard);
 		comboBox.setForeground(Color.GREEN);
 		comboBox.setFont(new Font("Tahoma", Font.BOLD, 18));
 		comboBox.setBackground(Color.BLACK);
@@ -242,7 +243,7 @@ public class Marksheet {
 		panel_1.add(lblNewLabel_1_1_1_1_1_1_1);
 		
 		JComboBox comboBox_1_2 = new JComboBox();
-		comboBox_1_2.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8"}));
+		comboBox_1_2.setModel(new DefaultComboBoxModel(new String[] {"1", "2"}));
 		comboBox_1_2.setMaximumRowCount(1);
 		comboBox_1_2.setForeground(Color.GREEN);
 		comboBox_1_2.setFont(new Font("Tahoma", Font.BOLD, 18));
@@ -707,15 +708,15 @@ public class Marksheet {
 		
 		JButton btnSend = new JButton("Send");
 		btnSend.setIcon(new ImageIcon(Marksheet.class.getResource("/GuiSwing2/Imgs/send.png")));
-		btnSend.setSelectedIcon(new ImageIcon("D:\\java\\javaproj\\JavaProject\\src\\images\\send.png"));
+		btnSend.setSelectedIcon(new ImageIcon(Marksheet.class.getResource("/GuiSwing2/Imgs/send.png")));
 		btnSend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(flag==true) {
 				 try {
 					
 			            Class.forName("com.mysql.cj.jdbc.Driver"); //Register the mysql driver
-			            con1 = DriverManager.getConnection("jdbc:mysql://localhost/schoolmanagement","root","");
-			            insert = con1.prepareStatement("insert into marksheet(marksheet,result,rollno,branch,sem)values(?,?,?,?,?)");
+			            con1 = DriverManager.getConnection("jdbc:mysql://localhost/students","root","");
+			            insert = con1.prepareStatement("insert into marksheet(marksheet,result,rollno,standard,sem)values(?,?,?,?,?)");
 			            insert.setString(1,textArea.getText());
 			            insert.setString(2,lblNewLabel_2.getText());
 			            insert.setString(3,textField.getText());
@@ -753,8 +754,8 @@ public class Marksheet {
 					
 					 try {
 				            Class.forName("com.mysql.cj.jdbc.Driver"); //Register the mysql driver
-				            con1 = DriverManager.getConnection("jdbc:mysql://localhost/schoolmanagement","root","");
-				            insert = con1.prepareStatement("select name,branch,email,mobile,gender from students where rollno = ?");
+				            con1 = DriverManager.getConnection("jdbc:mysql://localhost/students","root","");
+				            insert = con1.prepareStatement("select name,standard,email,mobile,gender from student where rollno = ?");
 				            insert.setString(1,textField.getText());
 				           
 				           

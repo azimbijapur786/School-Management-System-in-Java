@@ -65,6 +65,12 @@ public class second {
 		frmStudentProfile.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AdminClassroom ac = new AdminClassroom();
+				frmStudentProfile.setVisible(false);
+			}
+		});
 		btnNewButton_1.setFocusable(false);
 		btnNewButton_1.setIcon(new ImageIcon(second.class.getResource("/GuiSwing2/images/data-processing.png")));
 		btnNewButton_1.setBounds(421, 165, 163, 91);

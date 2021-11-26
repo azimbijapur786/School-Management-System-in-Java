@@ -140,7 +140,7 @@ public class Checkattend {
 			}
 		});
 		btnBack.setBorder(new LineBorder(Color.BLACK, 3));
-		btnBack.setIcon(new ImageIcon("D:\\java\\javaproj\\JavaProject\\src\\images\\back.png"));
+		btnBack.setIcon(new ImageIcon(Checkattend.class.getResource("/GuiSwing2/Imgs/back.png")));
 		btnBack.setForeground(Color.WHITE);
 		btnBack.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnBack.setBackground(UIManager.getColor("Button.background"));

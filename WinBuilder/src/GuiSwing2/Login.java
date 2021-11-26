@@ -81,8 +81,35 @@ public class Login {
 				
 				
 				if(usertype=="student") {
-					StudentLogin sl = new StudentLogin();
-					frmLogin.setVisible(false);
+					 try {
+				            Class.forName("com.mysql.cj.jdbc.Driver"); //Register the mysql driver
+				            con1 = DriverManager.getConnection("jdbc:mysql://localhost/students","root","");
+				            insert = con1.prepareStatement("select name,standard,rollno from student where username = ? and pass = ? ");
+				            insert.setString(1,user);
+				            insert.setString(2,pass);
+				           
+				           rs= insert.executeQuery();
+				            if(rs.next()==false) {
+				            	JOptionPane.showMessageDialog(null,"Student Not Found", "ERROR", JOptionPane.PLAIN_MESSAGE);
+				            }
+				            else {
+				            	name = rs.getString("name");
+				            	standard = rs.getString("standard");
+				            	rollno = rs.getString("rollno");
+				            	StudentLogin sl = new StudentLogin(name,usertype,standard,rollno);
+								frmLogin.setVisible(false);
+				            
+				            }
+				            
+				        } catch (ClassNotFoundException ex) {
+				        	 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+				        } catch (SQLException ex) {
+				        	 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+				        } 
+					
+					
+					
+				
 				}
 				else if(usertype=="teacher") {
 					
@@ -100,8 +127,8 @@ public class Login {
 				            else {
 				            	name = rs.getString("name");
 				            	standard = rs.getString("standard");
-				            	rollno = rs.getString("code");
-				            	TeacherLogin tl = new TeacherLogin(name,usertype,standard,rollno);
+				            	code = rs.getString("code");
+				            	TeacherLogin tl = new TeacherLogin(name,usertype,standard,code);
 								frmLogin.setVisible(false);
 						
 				            
@@ -136,7 +163,7 @@ public class Login {
 				            	JOptionPane.showMessageDialog(null,"Admin Not Found", "ERROR", JOptionPane.PLAIN_MESSAGE);
 				            }
 				            else {
-				            	first first = new first();
+				            	
 				            	
 								
 				            	first attach = new first();

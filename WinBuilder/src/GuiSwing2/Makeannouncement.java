@@ -38,7 +38,7 @@ public class Makeannouncement {
 	static String usertype;
 	static String name;
 	static String brnchhh;
-	static String branch;
+	static String standard;
 	static String date;
 	static String code;
 	static String announce;
@@ -53,7 +53,7 @@ public class Makeannouncement {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Makeannouncement window = new Makeannouncement(username,usertype,branch,code);
+					Makeannouncement window = new Makeannouncement(username,usertype,standard,code);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -68,7 +68,7 @@ public class Makeannouncement {
 	public Makeannouncement(String usern,String usert,String brnch, String rn) {
 		this.username = usern;
 		this.usertype = usert;
-		this.branch = brnch;
+		this.standard = brnch;
 		this.code = rn;
 		initialize();
 	}
@@ -112,7 +112,7 @@ public class Makeannouncement {
 		lblNewLabel_1.setBounds(106, 10, 78, 28);
 		panel_1.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("Branch :");
+		JLabel lblNewLabel_1_1 = new JLabel("standard :");
 		lblNewLabel_1_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		lblNewLabel_1_1.setBounds(106, 48, 78, 28);
 		panel_1.add(lblNewLabel_1_1);
@@ -137,7 +137,7 @@ public class Makeannouncement {
 		textField_1.setColumns(10);
 		textField_1.setBackground(Color.BLACK);
 		textField_1.setBounds(194, 55, 214, 19);
-		textField_1.setText(branch);
+		textField_1.setText(standard);
 		panel_1.add(textField_1);
 		
 		JDateChooser dateChooser = new JDateChooser();
@@ -158,7 +158,7 @@ public class Makeannouncement {
 		btnBack.setFocusable(false);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Annoucement an = new Annoucement(username,usertype,branch,code);
+				Annoucement an = new Annoucement(username,usertype,standard,code);
 				frame.setVisible(false);
 				
 			}
@@ -191,39 +191,6 @@ public class Makeannouncement {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				
-				 try {
-				
-					 
-			            Class.forName("com.mysql.cj.jdbc.Driver"); //Register the mysql driver
-			            con1 = DriverManager.getConnection("jdbc:mysql://localhost/schoolmanagement","root","");
-			            insert = con1.prepareStatement("select * from announcement where branch=?");
-			            insert.setString(1,branch);   
-			           rs= insert.executeQuery();
-			        
-			            if(rs.next()) {
-			        
-			             announcement	=rs.getString("announcement");
-			        
-			
-			            }
-			            else{
-			            	announcement="";
-			            }
-			           
-				 } catch (ClassNotFoundException ex) {
-		        	 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-		        } catch (SQLException ex) {
-		        	 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-		        	
-		        } 
-				
-				
-				
-				
-				
-				
-				
 				name = textField.getText();
 				brnchhh= textField_1.getText();
 				SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
@@ -236,7 +203,7 @@ public class Makeannouncement {
 					 JOptionPane.showMessageDialog(frame, "Enter your name","Error", 0, null);
 				}
 				else if(brnchhh.isEmpty()) {
-					 JOptionPane.showMessageDialog(frame, "Enter your branch","Error", 0, null);
+					 JOptionPane.showMessageDialog(frame, "Enter your standard","Error", 0, null);
 				}
 				else if(date.isEmpty()) {
 					 JOptionPane.showMessageDialog(frame, "Enter date","Error", 0, null);
@@ -247,13 +214,13 @@ public class Makeannouncement {
 				else {
 					 try {
 				            Class.forName("com.mysql.cj.jdbc.Driver"); //Register the mysql driver
-				            con1 = DriverManager.getConnection("jdbc:mysql://localhost/schoolmanagement","root","");
-				            insert = con1.prepareStatement("insert into announcement(announcement,date,branch,teacher,prevannounce)values(?,?,?,?,?)");
+				            con1 = DriverManager.getConnection("jdbc:mysql://localhost/students","root","");
+				            insert = con1.prepareStatement("insert into announcement(announcement,date,standard,teacher)values(?,?,?,?)");
 				            insert.setString(1,announce);
 				            insert.setString(2,date);
 				            insert.setString(3,brnchhh);
 				            insert.setString(4,name);
-				            insert.setString(5,announcement);
+				            
 				        
 
 				            insert.executeUpdate();

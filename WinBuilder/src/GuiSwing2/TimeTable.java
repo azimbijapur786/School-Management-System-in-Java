@@ -52,7 +52,7 @@ public class TimeTable {
 		this.username=user;
 		this.usertype=usert;
 		this.standard= std;
-		if(usertype=="Student") {
+		if(usertype=="student") {
 			this.rollno=rn;
 		}
 		else {
@@ -123,9 +123,13 @@ public class TimeTable {
 		panel_1.setBounds(10, 87, 875, 354);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
+		
+	 lblNewLabel_1 = new JLabel("");
+	 lblNewLabel_1.setBounds(10, 10, 855, 331);
+	 panel_1.add(lblNewLabel_1);
 
 		JButton btnNewButton = new JButton("Update");
-		if(usertype=="Teacher") {
+		if(usertype=="teacher") {
 			btnNewButton.setEnabled(true);
 		}
 		else {
@@ -134,8 +138,11 @@ public class TimeTable {
 		btnNewButton.setIcon(new ImageIcon(TimeTable.class.getResource("/GuiSwing2/Imgs/redo.png")));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				 String currentDirectory = System.getProperty("user.dir");
+				  JFileChooser fc=new JFileChooser(currentDirectory+"\\WinBuilder\\src\\GuiSwing2\\User_images\\");
 				
-				  JFileChooser fc=new JFileChooser("D:\\java\\images");    
+				
+//				  JFileChooser fc=new JFileChooser("D:\\java\\images");    
 				    int i=fc.showOpenDialog(panel_1);    
 				    Path temp = null;
 				    if(i==JFileChooser.APPROVE_OPTION){   
@@ -151,8 +158,8 @@ public class TimeTable {
 				        
 				        try {
 				            Class.forName("com.mysql.cj.jdbc.Driver"); //Register the mysql driver
-				            con1 = DriverManager.getConnection("jdbc:mysql://localhost/schoolmanagement","root","");
-				            insert = con1.prepareStatement("update timetable set filepath = ? where branch = ?");
+				            con1 = DriverManager.getConnection("jdbc:mysql://localhost/students","root","");
+				            insert = con1.prepareStatement("update timetable set filepath = ? where standard = ?");
 				            insert.setString(1,filepath);
 				            insert.setString(2,standard);
 				          
@@ -199,14 +206,14 @@ public class TimeTable {
 		btnBack.setIcon(new ImageIcon(TimeTable.class.getResource("/GuiSwing2/Imgs/back.png")));
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(usertype=="Student") {
-//					Mainmenu mm = new Mainmenu(username,usertype,branch,rollno);
-					StudentLogin Tl = new StudentLogin();
+				if(usertype=="student") {
+//					Mainmenu mm = new Mainmenu(username,usertype,standard,rollno);
+					StudentLogin sl = new StudentLogin(username,usertype,standard,rollno);
 					
 					 frame.setVisible(false);
 				}
-				else {
-//					Mainmenu mm = new Mainmenu(username,usertype,branch,code);
+				else if(usertype=="teacher"){
+//					Mainmenu mm = new Mainmenu(username,usertype,standard,code);
 					TeacherLogin Tl = new TeacherLogin(username,usertype,standard,code);
 					 frame.setVisible(false);
 				}
@@ -219,17 +226,13 @@ public class TimeTable {
 		btnBack.setBackground(UIManager.getColor("Button.background"));
 		btnBack.setBounds(583, 451, 141, 57);
 		frame.getContentPane().add(btnBack);
-		
-	 lblNewLabel_1 = new JLabel("");
-	 lblNewLabel_1.setBounds(48, 87, 855, 331);
-	 frame.getContentPane().add(lblNewLabel_1);
 	}
 	public void load_tt() {
 		 try {
 			 int c;
 	            Class.forName("com.mysql.cj.jdbc.Driver"); //Register the mysql driver
-	            con1 = DriverManager.getConnection("jdbc:mysql://localhost/schoolmanagement","root","");
-	            insert = con1.prepareStatement("select * from timetable where branch=?");
+	            con1 = DriverManager.getConnection("jdbc:mysql://localhost/students","root","");
+	            insert = con1.prepareStatement("select * from timetable where standard=?");
 	            insert.setString(1,standard);
 	        
 	           rs= insert.executeQuery();

@@ -153,7 +153,7 @@ public Profile(String usern,String usert , String stand, String code) {
 		JLabel lblNewLabel_1_1 = new JLabel("User Name :");
 		lblNewLabel_1_1.setForeground(Color.BLACK);
 		lblNewLabel_1_1.setFont(new Font("Times New Roman", Font.BOLD, 23));
-		lblNewLabel_1_1.setBounds(87, 76, 135, 45);
+		lblNewLabel_1_1.setBounds(87, 87, 135, 45);
 		panel_1.add(lblNewLabel_1_1);
 		
 		
@@ -181,13 +181,13 @@ public Profile(String usern,String usert , String stand, String code) {
 		JLabel lblNewLabel_1_1_1_1 = new JLabel("Standard :");
 		lblNewLabel_1_1_1_1.setForeground(Color.BLACK);
 		lblNewLabel_1_1_1_1.setFont(new Font("Times New Roman", Font.BOLD, 23));
-		lblNewLabel_1_1_1_1.setBounds(87, 131, 135, 45);
+		lblNewLabel_1_1_1_1.setBounds(87, 154, 135, 45);
 		panel_1.add(lblNewLabel_1_1_1_1);
 		
 		JLabel lblNewLabel_1_1_1_1_1 = new JLabel("Gender :");
 		lblNewLabel_1_1_1_1_1.setForeground(Color.BLACK);
 		lblNewLabel_1_1_1_1_1.setFont(new Font("Times New Roman", Font.BOLD, 23));
-		lblNewLabel_1_1_1_1_1.setBounds(87, 292, 135, 45);
+		lblNewLabel_1_1_1_1_1.setBounds(87, 370, 135, 45);
 		panel_1.add(lblNewLabel_1_1_1_1_1);
 		
 		JPanel panel_2 = new JPanel();
@@ -210,13 +210,13 @@ public Profile(String usern,String usert , String stand, String code) {
 		JLabel lblNewLabel_1_2 = new JLabel("Email :");
 		lblNewLabel_1_2.setForeground(Color.BLACK);
 		lblNewLabel_1_2.setFont(new Font("Times New Roman", Font.BOLD, 23));
-		lblNewLabel_1_2.setBounds(87, 237, 135, 45);
+		lblNewLabel_1_2.setBounds(87, 297, 135, 45);
 		panel_1.add(lblNewLabel_1_2);
 		
 		JLabel lblNewLabel_1_1_2 = new JLabel("Mobile no:");
 		lblNewLabel_1_1_2.setForeground(Color.BLACK);
 		lblNewLabel_1_1_2.setFont(new Font("Times New Roman", Font.BOLD, 23));
-		lblNewLabel_1_1_2.setBounds(87, 182, 135, 45);
+		lblNewLabel_1_1_2.setBounds(87, 224, 135, 45);
 		panel_1.add(lblNewLabel_1_1_2);
 		
 		JLabel lblNewLabel_1_4 = new JLabel(name);
@@ -229,25 +229,25 @@ public Profile(String usern,String usert , String stand, String code) {
 		JLabel lblNewLabel_1_1_1 = new JLabel(uname);
 		lblNewLabel_1_1_1.setForeground(Color.BLACK);
 		lblNewLabel_1_1_1.setFont(new Font("Times New Roman", Font.BOLD, 23));
-		lblNewLabel_1_1_1.setBounds(232, 76, 438, 45);
+		lblNewLabel_1_1_1.setBounds(232, 87, 438, 45);
 		panel_1.add(lblNewLabel_1_1_1);
 		
 		JLabel lblNewLabel_1_1_1_2 = new JLabel(standard);
 		lblNewLabel_1_1_1_2.setForeground(Color.BLACK);
 		lblNewLabel_1_1_1_2.setFont(new Font("Times New Roman", Font.BOLD, 23));
-		lblNewLabel_1_1_1_2.setBounds(232, 131, 438, 45);
+		lblNewLabel_1_1_1_2.setBounds(232, 154, 438, 45);
 		panel_1.add(lblNewLabel_1_1_1_2);
 		
 		JLabel lblNewLabel_1_1_1_3 = new JLabel(mobileno);
 		lblNewLabel_1_1_1_3.setForeground(Color.BLACK);
 		lblNewLabel_1_1_1_3.setFont(new Font("Times New Roman", Font.BOLD, 23));
-		lblNewLabel_1_1_1_3.setBounds(232, 182, 319, 45);
+		lblNewLabel_1_1_1_3.setBounds(232, 224, 319, 45);
 		panel_1.add(lblNewLabel_1_1_1_3);
 		
 		JLabel lblNewLabel_1_1_1_3_1 = new JLabel(email);
 		lblNewLabel_1_1_1_3_1.setForeground(Color.BLACK);
 		lblNewLabel_1_1_1_3_1.setFont(new Font("Times New Roman", Font.BOLD, 23));
-		lblNewLabel_1_1_1_3_1.setBounds(232, 237, 438, 45);
+		lblNewLabel_1_1_1_3_1.setBounds(232, 297, 438, 45);
 		panel_1.add(lblNewLabel_1_1_1_3_1);
 		
 		
@@ -255,19 +255,19 @@ public Profile(String usern,String usert , String stand, String code) {
 		JLabel lblNewLabel_1_1_1_3_3 = new JLabel(gender);
 		lblNewLabel_1_1_1_3_3.setForeground(Color.BLACK);
 		lblNewLabel_1_1_1_3_3.setFont(new Font("Times New Roman", Font.BOLD, 23));
-		lblNewLabel_1_1_1_3_3.setBounds(232, 292, 135, 45);
+		lblNewLabel_1_1_1_3_3.setBounds(232, 370, 135, 45);
 		panel_1.add(lblNewLabel_1_1_1_3_3);
 		
 			JLabel lblNewLabel_1_3 = new JLabel("Code :");
 			lblNewLabel_1_3.setForeground(Color.BLACK);
 			lblNewLabel_1_3.setFont(new Font("Times New Roman", Font.BOLD, 23));
 			lblNewLabel_1_3.setBackground(Color.WHITE);
-			lblNewLabel_1_3.setBounds(850, 271, 135, 45);
+			lblNewLabel_1_3.setBounds(87, 443, 77, 45);
 			panel_1.add(lblNewLabel_1_3);
 			JLabel lblNewLabel_1_1_1_3_3_1 = new JLabel(code);
 			lblNewLabel_1_1_1_3_3_1.setForeground(Color.RED);
 			lblNewLabel_1_1_1_3_3_1.setFont(new Font("Times New Roman", Font.BOLD, 23));
-			lblNewLabel_1_1_1_3_3_1.setBounds(924, 271, 135, 45);
+			lblNewLabel_1_1_1_3_3_1.setBounds(232, 443, 135, 45);
 			panel_1.add(lblNewLabel_1_1_1_3_3_1);
 		
 		

@@ -51,7 +51,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.awt.event.ActionEvent;
 
-public class Attendsheet {
+public class AdminClassroom {
 	public static ResultSet rs;
 	public static Connection con1;
 	public static PreparedStatement insert;
@@ -64,12 +64,10 @@ public class Attendsheet {
 
 	
 	public static String name;
+	public static String rollno;
 	public static String code;
 	public static String email;
 	public static String mobileno;
-	public static String date;
-	public static String sub;
-	
 	JTable table;
 	/**
 	 * Launch the application.
@@ -79,13 +77,8 @@ public class Attendsheet {
 	
 	
 	
-	public Attendsheet(String usern, String usert, String standard, String code,String dte ) {
-		this.date= dte;
+	public AdminClassroom() {
 	
-		this.code=code;
-		this.standard = standard;
-		this.username = usern;
-		this.usertype= usert;
 		
 		initialize();
 		load_table();
@@ -95,7 +88,7 @@ public class Attendsheet {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Attendsheet window = new Attendsheet(username,usertype,standard,code,date);
+					AdminClassroom window = new AdminClassroom();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -122,14 +115,14 @@ public class Attendsheet {
 		frame.setResizable(false);
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(SystemColor.desktop, 8));
-		panel.setBackground(Color.ORANGE);
+		panel.setBackground(SystemColor.activeCaption);
 		panel.setBounds(10, 10, 1164, 81);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Attendance Sheet");
-		lblNewLabel.setForeground(Color.RED);
-		lblNewLabel.setIcon(new ImageIcon("D:\\java\\javaproj\\JavaProject\\src\\images\\icons8-document-50.png"));
+		JLabel lblNewLabel = new JLabel("AdminClassroom");
+		lblNewLabel.setForeground(Color.BLACK);
+		lblNewLabel.setIcon(new ImageIcon("D:\\java\\javaproj\\JavaProject\\src\\images\\icons8-google-AdminClassroom-48.png"));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(10, 13, 1144, 58);
 		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 41));
@@ -140,7 +133,7 @@ public class Attendsheet {
 //		  String data[][]={ {"312034","Saif Ali","6700001231","saifmulla164@gmail.com"},    
 ////
 //                  }; 
-//		  String column[]={"code","NAME","Mobile no.","Email"};    
+//		  String column[]={"Rollno","NAME","Mobile no.","Email"};    
 		 table = new JTable();
 //		 JTable table = new JTable();
 		 table.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -149,7 +142,7 @@ public class Attendsheet {
 		 		{},
 		 	},
 		 	new String[] {
-		 		"Id", "Roll No", "Name", "Standard",
+		 		"Rollno", "NAME", "Mobile no.","Standard", "Email"
 		 	}
 		 ));
 		 table.getColumnModel().getColumn(0).setPreferredWidth(71);
@@ -175,7 +168,7 @@ public class Attendsheet {
 		JButton btnNewButton = new JButton("");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TeacherLogin Tl = new TeacherLogin(username,usertype,standard,code);
+				second sc = new second();
 				
 				 frame.setVisible(false);
 				
@@ -184,7 +177,7 @@ public class Attendsheet {
 		});
 		btnNewButton.setFocusable(false);
 		btnNewButton.setBackground(Color.RED);
-		btnNewButton.setIcon(new ImageIcon("D:\\java\\javaproj\\JavaProject\\src\\images\\back.png"));
+		btnNewButton.setIcon(new ImageIcon(AdminClassroom.class.getResource("/GuiSwing2/Imgs/back.png")));
 		btnNewButton.setBounds(1123, 757, 51, 37);
 		frame.getContentPane().add(btnNewButton);
 		frame.setVisible(true);
@@ -195,9 +188,8 @@ public class Attendsheet {
 			 int c;
 	            Class.forName("com.mysql.cj.jdbc.Driver"); //Register the mysql driver
 	            con1 = DriverManager.getConnection("jdbc:mysql://localhost/students","root","");
-	            insert = con1.prepareStatement("select * from attendance where standard=? and date = ?");
-	            insert.setString(1,standard);
-	            insert.setString(2,date);
+	            insert = con1.prepareStatement("select * from student");
+	           
 	            
 	           
 	           rs= insert.executeQuery();
@@ -210,11 +202,11 @@ public class Attendsheet {
 	            	Vector v2 = new Vector();
 	            	
 	            	for(int a =1;a<=c;a++) {
-	            		v2.add(rs.getString("id"));
-	            		v2.add(rs.getString("roll"));
+	            		v2.add(rs.getString("rollno"));
 	            		v2.add(rs.getString("name"));
+	            		v2.add(rs.getString("mobile"));
 	            		v2.add(rs.getString("standard"));
-	            		
+	            		v2.add(rs.getString("email"));
 	            	}
 	            	Df.addRow(v2);
 	            }
@@ -222,7 +214,7 @@ public class Attendsheet {
 	            	 
 //	            	name = rs.getString("name");
 //	            	mobileno = rs.getString("mobile");
-//	            	code = rs.getString("code");
+//	            	rollno = rs.getString("rollno");
 //	            	email = rs.getString("email");
 	            	
 	            	

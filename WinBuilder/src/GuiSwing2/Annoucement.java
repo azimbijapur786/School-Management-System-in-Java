@@ -122,7 +122,7 @@ public class Annoucement {
 		panel_1.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Make Announcement");
-		if(usertype=="Student") {
+		if(usertype=="student") {
 			btnNewButton.setEnabled(false);
 		}
 		else {
@@ -149,13 +149,14 @@ public class Annoucement {
 		btnBack.setFocusable(false);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(usertype=="Student") {
-//				Mainmenu mm = new Mainmenu(username,usertype,standard, rollno);
+				if(usertype=="student") {
+
+					StudentLogin sl = new StudentLogin(username,usertype,standard,rollno);
 				
 				 frame.setVisible(false);
 				}
 				else {
-//					Mainmenu mm = new Mainmenu(username,usertype,standard, code);
+
 					TeacherLogin Tl = new TeacherLogin(username,usertype,standard,code);
 					 frame.setVisible(false);
 				}
@@ -244,7 +245,7 @@ public class Annoucement {
 		 try {
 			 int c;
 	            Class.forName("com.mysql.cj.jdbc.Driver"); //Register the mysql driver
-	            con1 = DriverManager.getConnection("jdbc:mysql://localhost/schoolmanagement","root","");
+	            con1 = DriverManager.getConnection("jdbc:mysql://localhost/students","root","");
 	            insert = con1.prepareStatement("select * from announcement where standard=?");
 	            insert.setString(1,standard);   
 	           rs= insert.executeQuery();

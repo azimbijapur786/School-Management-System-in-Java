@@ -117,7 +117,7 @@ public class Classroom {
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
 		JPanel panel = new JPanel();
-		panel.setBorder(new LineBorder(SystemColor.desktop, 8));
+		panel.setBorder(new LineBorder(Color.BLACK, 4));
 		panel.setBackground(SystemColor.activeCaption);
 		panel.setBounds(10, 10, 1164, 81);
 		frame.getContentPane().add(panel);
@@ -125,7 +125,7 @@ public class Classroom {
 		
 		JLabel lblNewLabel = new JLabel("Classroom");
 		lblNewLabel.setForeground(Color.BLACK);
-		lblNewLabel.setIcon(new ImageIcon("D:\\java\\javaproj\\JavaProject\\src\\images\\icons8-google-classroom-48.png"));
+		lblNewLabel.setIcon(new ImageIcon(Classroom.class.getResource("/GuiSwing2/Imgs/icons8-google-classroom-48.png")));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(10, 13, 1144, 58);
 		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 41));
@@ -180,7 +180,7 @@ public class Classroom {
 		});
 		btnNewButton.setFocusable(false);
 		btnNewButton.setBackground(Color.RED);
-		btnNewButton.setIcon(new ImageIcon("D:\\java\\javaproj\\JavaProject\\src\\images\\back.png"));
+		btnNewButton.setIcon(new ImageIcon(Classroom.class.getResource("/GuiSwing2/Imgs/back.png")));
 		btnNewButton.setBounds(1123, 757, 51, 37);
 		frame.getContentPane().add(btnNewButton);
 		frame.setVisible(true);
@@ -190,8 +190,8 @@ public class Classroom {
 		 try {
 			 int c;
 	            Class.forName("com.mysql.cj.jdbc.Driver"); //Register the mysql driver
-	            con1 = DriverManager.getConnection("jdbc:mysql://localhost/schoolmanagement","root","");
-	            insert = con1.prepareStatement("select * from students where standard=? ");
+	            con1 = DriverManager.getConnection("jdbc:mysql://localhost/students","root","");
+	            insert = con1.prepareStatement("select * from student where standard=? ");
 	            insert.setString(1,standard);
 	            
 	           
