@@ -95,7 +95,7 @@ public AddStd() {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setFont(new Font("Tahoma", Font.PLAIN, 8));
-		frame.getContentPane().setBackground(new Color(255, 228, 196));
+		frame.getContentPane().setBackground(SystemColor.info);
 		frame.setBounds(100, 100, 1147, 719);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);

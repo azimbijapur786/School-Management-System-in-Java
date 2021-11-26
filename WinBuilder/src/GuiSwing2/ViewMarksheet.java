@@ -28,6 +28,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
 
 public class ViewMarksheet {
 	Boolean flag=false;
@@ -103,6 +104,8 @@ public class ViewMarksheet {
 		frmViewMarksheet.getContentPane().add(getClassMarksheet);
 		
 		JButton getMarksheetBtn = new JButton("Get Marksheet");
+		getMarksheetBtn.setFocusable(false);
+		getMarksheetBtn.setIcon(new ImageIcon(ViewMarksheet.class.getResource("/GuiSwing2/Imgs/icons8-document-50.png")));
 		getMarksheetBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String sem = getClassMarksheet.getText();
@@ -146,10 +149,12 @@ public class ViewMarksheet {
 			}
 		});
 		getMarksheetBtn.setFont(new Font("Times New Roman", Font.PLAIN, 22));
-		getMarksheetBtn.setBounds(61, 245, 183, 53);
+		getMarksheetBtn.setBounds(61, 245, 241, 64);
 		frmViewMarksheet.getContentPane().add(getMarksheetBtn);
 		
 		JButton btnPrintMarksheet = new JButton("Print Marksheet");
+		btnPrintMarksheet.setFocusable(false);
+		btnPrintMarksheet.setIcon(new ImageIcon(ViewMarksheet.class.getResource("/GuiSwing2/Imgs/printer.png")));
 		btnPrintMarksheet.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -171,10 +176,12 @@ public class ViewMarksheet {
 			}
 		});
 		btnPrintMarksheet.setFont(new Font("Times New Roman", Font.PLAIN, 22));
-		btnPrintMarksheet.setBounds(61, 307, 183, 53);
+		btnPrintMarksheet.setBounds(61, 319, 241, 64);
 		frmViewMarksheet.getContentPane().add(btnPrintMarksheet);
 		
 		JButton clearMarksheet = new JButton("Clear");
+		clearMarksheet.setFocusable(false);
+		clearMarksheet.setIcon(new ImageIcon(ViewMarksheet.class.getResource("/GuiSwing2/Imgs/erase.png")));
 		clearMarksheet.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
@@ -184,10 +191,12 @@ public class ViewMarksheet {
 			}
 		});
 		clearMarksheet.setFont(new Font("Times New Roman", Font.PLAIN, 22));
-		clearMarksheet.setBounds(61, 371, 183, 53);
+		clearMarksheet.setBounds(59, 393, 243, 64);
 		frmViewMarksheet.getContentPane().add(clearMarksheet);
 		
-		JButton BackMarksheet = new JButton("Back");
+		JButton BackMarksheet = new JButton("");
+		BackMarksheet.setFocusable(false);
+		BackMarksheet.setIcon(new ImageIcon(ViewMarksheet.class.getResource("/GuiSwing2/images/previous.png")));
 		BackMarksheet.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
@@ -196,7 +205,7 @@ public class ViewMarksheet {
 			}
 		});
 		BackMarksheet.setFont(new Font("Times New Roman", Font.PLAIN, 22));
-		BackMarksheet.setBounds(249, 245, 85, 179);
+		BackMarksheet.setBounds(10, 11, 79, 42);
 		frmViewMarksheet.getContentPane().add(BackMarksheet);
 	}
 	public static void main(String[] args) {

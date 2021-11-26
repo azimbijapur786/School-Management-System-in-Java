@@ -45,7 +45,7 @@ public class StudentLogin {
 			frmStudenLogin = new JFrame();
 			frmStudenLogin.getContentPane().setBackground(new Color(255, 250, 205));
 			frmStudenLogin.setTitle("Studen Login");
-			frmStudenLogin.setBounds(100, 100, 900, 550);
+			frmStudenLogin.setBounds(100, 100, 1104, 646);
 			frmStudenLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frmStudenLogin.getContentPane().setLayout(null);
 			frmStudenLogin.setVisible(true);
@@ -55,7 +55,7 @@ public class StudentLogin {
 			JPanel titlestdPanel = new JPanel();
 			titlestdPanel.setBackground(new Color(255, 255, 240));
 			titlestdPanel.setBorder(new LineBorder(new Color(0, 0, 0), 3));
-			titlestdPanel.setBounds(10, 11, 844, 86);
+			titlestdPanel.setBounds(10, 11, 1070, 86);
 			frmStudenLogin.getContentPane().add(titlestdPanel);
 			titlestdPanel.setLayout(null);
 			
@@ -68,7 +68,7 @@ public class StudentLogin {
 			JLabel schoolName = new JLabel("K.C.GANDHI ENGLISH SCHOOL");
 			schoolName.setHorizontalAlignment(SwingConstants.CENTER);
 			schoolName.setBackground(new Color(255, 255, 255));
-			schoolName.setBounds(0, 0, 844, 86);
+			schoolName.setBounds(-27, 0, 1097, 86);
 			titlestdPanel.add(schoolName);
 			schoolName.setForeground(new Color(0, 0, 0));
 			schoolName.setFont(new Font("Times New Roman", Font.BOLD, 30));
@@ -91,7 +91,7 @@ public class StudentLogin {
 			});
 			addAttendance.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 			addAttendance.setBackground(UIManager.getColor("Button.light"));
-			addAttendance.setBounds(21, 126, 232, 67);
+			addAttendance.setBounds(21, 126, 232, 86);
 			frmStudenLogin.getContentPane().add(addAttendance);
 			
 			JButton viewMarks = new JButton("View Marksheet");
@@ -105,7 +105,7 @@ public class StudentLogin {
 				}
 			});
 			viewMarks.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-			viewMarks.setBounds(21, 210, 232, 67);
+			viewMarks.setBounds(21, 222, 232, 86);
 			frmStudenLogin.getContentPane().add(viewMarks);
 			
 			JButton viewFee = new JButton("Timetable");
@@ -119,7 +119,7 @@ public class StudentLogin {
 				}
 			});
 			viewFee.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-			viewFee.setBounds(21, 294, 232, 60);
+			viewFee.setBounds(21, 318, 232, 86);
 			frmStudenLogin.getContentPane().add(viewFee);
 			
 			JButton logoutStd = new JButton("Logout");
@@ -133,7 +133,7 @@ public class StudentLogin {
 				}
 			});
 			logoutStd.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-			logoutStd.setBounds(21, 440, 232, 60);
+			logoutStd.setBounds(21, 504, 232, 80);
 			frmStudenLogin.getContentPane().add(logoutStd);
 			
 			JButton getAnnounce = new JButton("Announcements");
@@ -147,15 +147,25 @@ public class StudentLogin {
 			});
 			getAnnounce.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 			getAnnounce.setFocusable(false);
-			getAnnounce.setBounds(21, 370, 232, 60);
+			getAnnounce.setBounds(21, 414, 232, 80);
 			frmStudenLogin.getContentPane().add(getAnnounce);
+			
+			JPanel panel = new JPanel();
+			panel.setBounds(294, 126, 774, 444);
+			frmStudenLogin.getContentPane().add(panel);
+			panel.setLayout(null);
 			
 			JLabel lblNewLabel = new JLabel("");
 			lblNewLabel.setBorder(new LineBorder(new Color(0, 0, 0), 3));
-			lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-			lblNewLabel.setIcon(new ImageIcon(StudentLogin.class.getResource("/GuiSwing2/library.jpg")));
-			lblNewLabel.setBounds(327, 137, 473, 322);
-			frmStudenLogin.getContentPane().add(lblNewLabel);
+			lblNewLabel.setBounds(0, 0, 774, 444);
+			ImageIcon icon = new ImageIcon(LoginAs.class.getResource("/GuiSwing2/imgs/library.jpg"));
+	    	Image image = icon.getImage();
+	    	Image imgscale = image.getScaledInstance(lblNewLabel.getWidth(),lblNewLabel.getHeight(),Image.SCALE_SMOOTH);
+	    	ImageIcon scaledicon = new ImageIcon(imgscale);
+	    	
+			
+			lblNewLabel.setIcon(scaledicon);
+			panel.add(lblNewLabel);
 		}
 		
 		
@@ -171,8 +181,4 @@ public class StudentLogin {
 			}
 		});
 	}
-
-	/**
-	 * Create the application.
-	 */
 }

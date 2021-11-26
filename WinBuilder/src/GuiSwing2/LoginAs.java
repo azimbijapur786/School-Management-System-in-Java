@@ -187,7 +187,7 @@ public class LoginAs {
 		schoolImg.setBounds(10, 102, 523, 380);
 		frmLoginAs.getContentPane().add(schoolImg);
 		schoolImg.setBorder(new LineBorder(new Color(0, 0, 0), 3));
-		ImageIcon icon = new ImageIcon(LoginAs.class.getResource("/GuiSwing2/school.png"));
+		ImageIcon icon = new ImageIcon(LoginAs.class.getResource("/GuiSwing2/imgs/school2.jpeg"));
     	Image image = icon.getImage();
     	Image imgscale = image.getScaledInstance(schoolImg.getWidth(),schoolImg.getHeight(),Image.SCALE_SMOOTH);
     	ImageIcon scaledicon = new ImageIcon(imgscale);

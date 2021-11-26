@@ -66,7 +66,7 @@ public class TeacherLogin {
 //			System.out.println(username+" "+usertype+" "+ standard +" "+code);
 			
 		frmTeacherLogin = new JFrame();
-		frmTeacherLogin.getContentPane().setBackground(new Color(255, 228, 196));
+		frmTeacherLogin.getContentPane().setBackground(SystemColor.info);
 		frmTeacherLogin.setTitle("Studen Login");
 		frmTeacherLogin.setBounds(100, 100, 1104, 646);
 		frmTeacherLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -122,16 +122,13 @@ public class TeacherLogin {
 		Library.setBounds(0, 0, 784, 336);
 		libimgPanel.add(Library);
 //		Library.setIcon(new ImageIcon("C:\\Users\\hp\\Desktop\\Java\\Eclipse\\WinBuilder\\src\\GuiSwing2\\library2.jfif"));
-		ImageIcon icon = new ImageIcon(LoginAs.class.getResource("/GuiSwing2/imgs/Complab.jpg"));
+		ImageIcon icon = new ImageIcon(LoginAs.class.getResource("/GuiSwing2/imgs/lab.jpeg"));
     	Image image = icon.getImage();
     	Image imgscale = image.getScaledInstance(Library.getWidth(),Library.getHeight(),Image.SCALE_SMOOTH);
     	ImageIcon scaledicon = new ImageIcon(imgscale);
 	Library.setIcon(scaledicon);
 		
-		JLabel logoStd = new JLabel("");
-		logoStd.setIcon(new ImageIcon("C:\\Users\\hp\\Desktop\\Java\\Eclipse\\WinBuilder\\src\\GuiSwing2\\logo5.jfif"));
-		logoStd.setBounds(46, 11, 78, 86);
-		frmTeacherLogin.getContentPane().add(logoStd);
+	
 		
 		JButton addAttendance = new JButton(" Check Attendance");
 		addAttendance.setBorderPainted(false);

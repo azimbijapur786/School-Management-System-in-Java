@@ -77,6 +77,7 @@ public AttendanceMark(String usern,String usert,String stand,String rollno) {
 		
 		
 		JButton clearAttd = new JButton("Clear");
+		clearAttd.setIcon(new ImageIcon(AttendanceMark.class.getResource("/GuiSwing2/Imgs/erase.png")));
 		clearAttd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e)
 			{
@@ -87,10 +88,11 @@ public AttendanceMark(String usern,String usert,String stand,String rollno) {
 			}
 		});
 		clearAttd.setFont(new Font("Times New Roman", Font.PLAIN, 22));
-		clearAttd.setBounds(206, 317, 99, 60);
+		clearAttd.setBounds(206, 317, 126, 60);
 		frmMarkAttendance.getContentPane().add(clearAttd);
 		
 		JButton backAttd = new JButton("Back");
+		backAttd.setIcon(new ImageIcon(AttendanceMark.class.getResource("/GuiSwing2/images/previous.png")));
 		backAttd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e)
 			{
@@ -100,7 +102,7 @@ public AttendanceMark(String usern,String usert,String stand,String rollno) {
 			}
 		});
 		backAttd.setFont(new Font("Times New Roman", Font.PLAIN, 22));
-		backAttd.setBounds(360, 317, 99, 60);
+		backAttd.setBounds(354, 317, 126, 60);
 		frmMarkAttendance.getContentPane().add(backAttd);
 		
 		getRollAttd = new JTextField(rollno);
@@ -127,6 +129,7 @@ public AttendanceMark(String usern,String usert,String stand,String rollno) {
 		
 		
 		JButton markAttendance = new JButton("Mark");
+		markAttendance.setIcon(new ImageIcon(AttendanceMark.class.getResource("/GuiSwing2/Imgs/check.png")));
 		markAttendance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
@@ -162,7 +165,7 @@ public AttendanceMark(String usern,String usert,String stand,String rollno) {
 			}
 		});
 		markAttendance.setFont(new Font("Times New Roman", Font.PLAIN, 22));
-		markAttendance.setBounds(46, 317, 99, 60);
+		markAttendance.setBounds(46, 317, 139, 60);
 		frmMarkAttendance.getContentPane().add(markAttendance);
 		
 		

@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.UIManager;
+import java.awt.SystemColor;
 
 public class second {
 
@@ -43,7 +44,7 @@ public class second {
 	 */
 	private void initialize() {
 		frmStudentProfile = new JFrame();
-		frmStudentProfile.getContentPane().setBackground(new Color(240, 128, 128));
+		frmStudentProfile.getContentPane().setBackground(SystemColor.info);
 		frmStudentProfile.setTitle("CORAL COAST INTERNATIONAL HIGH SCHOOL");
 		frmStudentProfile.setBounds(100, 100, 780, 466);
 		frmStudentProfile.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -64,7 +65,10 @@ public class second {
 		btnNewButton.setBounds(6, 6, 68, 58);
 		frmStudentProfile.getContentPane().add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("");
+		JButton btnNewButton_1 = new JButton("Manage Students");
+		btnNewButton_1.setForeground(Color.WHITE);
+		btnNewButton_1.setBackground(new Color(123, 104, 238));
+		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AdminClassroom ac = new AdminClassroom();
@@ -73,16 +77,11 @@ public class second {
 		});
 		btnNewButton_1.setFocusable(false);
 		btnNewButton_1.setIcon(new ImageIcon(second.class.getResource("/GuiSwing2/images/data-processing.png")));
-		btnNewButton_1.setBounds(421, 165, 163, 91);
+		btnNewButton_1.setBounds(389, 266, 299, 91);
 		frmStudentProfile.getContentPane().add(btnNewButton_1);
 		
-		JLabel lblNewLabel = new JLabel("STUDENTS INFO");
-		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setBounds(421, 97, 204, 58);
-		frmStudentProfile.getContentPane().add(lblNewLabel);
-		
-		JButton btnNewButton_2 = new JButton("");
+		JButton btnNewButton_2 = new JButton("Add Students");
+		btnNewButton_2.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_2.setFocusable(false);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -90,17 +89,16 @@ public class second {
 				frmStudentProfile.setVisible(false);
 			}
 		});
-		btnNewButton_2.setForeground(new Color(255, 255, 255));
-		btnNewButton_2.setBackground(UIManager.getColor("Button.background"));
+		btnNewButton_2.setForeground(Color.WHITE);
+		btnNewButton_2.setBackground(new Color(123, 104, 238));
 		btnNewButton_2.setIcon(new ImageIcon(second.class.getResource("/GuiSwing2/images/follow.png")));
-		btnNewButton_2.setBounds(202, 163, 167, 93);
+		btnNewButton_2.setBounds(88, 265, 283, 93);
 		frmStudentProfile.getContentPane().add(btnNewButton_2);
 		
-		JLabel lblNewLabel_1 = new JLabel("ADD STUDENTS");
-		lblNewLabel_1.setForeground(Color.WHITE);
-		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		lblNewLabel_1.setBounds(202, 109, 167, 35);
-		frmStudentProfile.getContentPane().add(lblNewLabel_1);
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(second.class.getResource("/GuiSwing2/images/unauthorized-person.png")));
+		lblNewLabel.setBounds(329, 95, 145, 128);
+		frmStudentProfile.getContentPane().add(lblNewLabel);
 	}
 
 }
