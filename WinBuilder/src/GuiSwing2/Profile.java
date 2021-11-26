@@ -118,7 +118,7 @@ public Profile(String usern,String usert , String stand, String code) {
 
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(Color.BLACK, 4));
-		panel.setBackground(Color.WHITE);
+		panel.setBackground(new Color(240, 230, 140));
 		panel.setBounds(22, 20, 1087, 71);
 		frame.getContentPane().add(panel);
 		
@@ -138,7 +138,7 @@ public Profile(String usern,String usert , String stand, String code) {
 		JPanel panel_1 = new JPanel();
 		panel_1.setForeground(new Color(0, 0, 0));
 		panel_1.setBorder(new LineBorder(new Color(0, 0, 0), 4));
-		panel_1.setBackground(SystemColor.activeCaption);
+		panel_1.setBackground(new Color(255, 218, 185));
 		panel_1.setBounds(22, 118, 1087, 528);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
@@ -158,12 +158,13 @@ public Profile(String usern,String usert , String stand, String code) {
 		
 		
 		JLabel lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setBorder(new LineBorder(new Color(0, 0, 0), 3));
 		
 		
 		
 		JButton btnLoginPage = new JButton("");
 		btnLoginPage.setFocusable(false);
-		btnLoginPage.setIcon(new ImageIcon("D:\\java\\javaproj\\JavaProject\\src\\images\\back.png"));
+		btnLoginPage.setIcon(new ImageIcon(Profile.class.getResource("/GuiSwing2/images/previous.png")));
 		btnLoginPage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 //				Mainmenu mm = new Mainmenu(username,usertype,standard, code);
@@ -175,7 +176,7 @@ public Profile(String usern,String usert , String stand, String code) {
 		btnLoginPage.setForeground(Color.WHITE);
 		btnLoginPage.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnLoginPage.setBackground(UIManager.getColor("Button.background"));
-		btnLoginPage.setBounds(992, 469, 67, 37);
+		btnLoginPage.setBounds(982, 461, 77, 45);
 		panel_1.add(btnLoginPage);
 		
 		JLabel lblNewLabel_1_1_1_1 = new JLabel("Standard :");
@@ -191,7 +192,8 @@ public Profile(String usern,String usert , String stand, String code) {
 		panel_1.add(lblNewLabel_1_1_1_1_1);
 		
 		JPanel panel_2 = new JPanel();
-		panel_2.setBorder(new LineBorder(new Color(0, 0, 0), 4));
+		panel_2.setBackground(new Color(255, 218, 185));
+		panel_2.setBorder(new LineBorder(new Color(0, 0, 0), 0));
 		panel_2.setBounds(897, 21, 162, 154);
 		panel_1.add(panel_2);
 		panel_2.setLayout(null);

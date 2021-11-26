@@ -149,7 +149,7 @@ public class Marksheet {
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new LineBorder(new Color(0, 0, 0), 3));
-		panel_1.setBackground(SystemColor.activeCaption);
+		panel_1.setBackground(new Color(255, 218, 185));
 		panel_1.setBounds(10, 101, 1321, 644);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
@@ -217,7 +217,7 @@ public class Marksheet {
 		rdbtnNewRadioButton.setSelected(true);
 		rdbtnNewRadioButton.setForeground(Color.RED);
 		rdbtnNewRadioButton.setFont(new Font("Tahoma", Font.BOLD, 18));
-		rdbtnNewRadioButton.setBackground(SystemColor.activeCaption);
+		rdbtnNewRadioButton.setBackground(new Color(255, 218, 185));
 		rdbtnNewRadioButton.setBounds(358, 252, 71, 21);
 		panel_1.add(rdbtnNewRadioButton);
 		
@@ -226,7 +226,7 @@ public class Marksheet {
 		rdbtnFemale.setForeground(Color.RED);
 		rdbtnFemale.setFont(new Font("Tahoma", Font.BOLD, 18));
 		rdbtnFemale.setFocusable(false);
-		rdbtnFemale.setBackground(SystemColor.activeCaption);
+		rdbtnFemale.setBackground(new Color(255, 222, 173));
 		rdbtnFemale.setBounds(431, 252, 104, 21);
 		panel_1.add(rdbtnFemale);
 		
@@ -409,7 +409,7 @@ public class Marksheet {
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new LineBorder(Color.BLACK, 3));
-		panel_2.setBackground(SystemColor.scrollbar);
+		panel_2.setBackground(new Color(255, 182, 193));
 		panel_2.setBounds(10, 372, 544, 250);
 		panel_1.add(panel_2);
 		
@@ -423,7 +423,7 @@ public class Marksheet {
 
 //		
 		JButton btnBack = new JButton("");
-		btnBack.setIcon(new ImageIcon(Marksheet.class.getResource("/GuiSwing2/Imgs/back.png")));
+		btnBack.setIcon(new ImageIcon(Marksheet.class.getResource("/GuiSwing2/images/previous.png")));
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -435,7 +435,7 @@ public class Marksheet {
 		btnBack.setFocusable(false);
 		btnBack.setForeground(Color.WHITE);
 		btnBack.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnBack.setBackground(UIManager.getColor("Button.background"));
+		btnBack.setBackground(new Color(240, 128, 128));
 		btnBack.setBounds(1189, 540, 91, 60);
 		panel_1.add(btnBack);
 		
@@ -462,7 +462,7 @@ public class Marksheet {
 		panel_1.add(lblNewLabel_2);
 		
 	JButton btnReset = new JButton("Reset");
-	btnReset.setIcon(new ImageIcon(Marksheet.class.getResource("/GuiSwing2/Imgs/erase.png")));
+	btnReset.setIcon(new ImageIcon(Marksheet.class.getResource("/GuiSwing2/Imgs/redo.png")));
 		btnReset.setFocusable(false);
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -504,7 +504,7 @@ public class Marksheet {
 		});
 		btnReset.setForeground(Color.RED);
 		btnReset.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnReset.setBackground(UIManager.getColor("Button.background"));
+		btnReset.setBackground(new Color(240, 128, 128));
 		btnReset.setBounds(898, 539, 123, 61);
 		panel_1.add(btnReset);
 		
@@ -644,7 +644,7 @@ public class Marksheet {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnNewButton.setBackground(UIManager.getColor("Button.background"));
+		btnNewButton.setBackground(new Color(240, 230, 140));
 		btnNewButton.setForeground(Color.RED);
 		btnNewButton.setBounds(869, 485, 135, 46);
 		panel_1.add(btnNewButton);
@@ -672,7 +672,7 @@ public class Marksheet {
 		});
 		btnLoginPage.setForeground(Color.BLACK);
 		btnLoginPage.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnLoginPage.setBackground(UIManager.getColor("Button.background"));
+		btnLoginPage.setBackground(new Color(147, 112, 219));
 		btnLoginPage.setBounds(601, 540, 135, 61);
 		panel_1.add(btnLoginPage);
 		
@@ -702,7 +702,7 @@ public class Marksheet {
 		});
 		btnNewButton_1.setForeground(Color.BLACK);
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnNewButton_1.setBackground(UIManager.getColor("Button.background"));
+		btnNewButton_1.setBackground(new Color(144, 238, 144));
 		btnNewButton_1.setBounds(755, 540, 123, 60);
 		panel_1.add(btnNewButton_1);
 		
@@ -741,7 +741,7 @@ public class Marksheet {
 		btnSend.setForeground(Color.BLACK);
 		btnSend.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnSend.setFocusable(false);
-		btnSend.setBackground(UIManager.getColor("Button.background"));
+		btnSend.setBackground(new Color(70, 130, 180));
 		btnSend.setBounds(1046, 540, 123, 61);
 		panel_1.add(btnSend);
 		

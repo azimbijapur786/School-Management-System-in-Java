@@ -117,7 +117,7 @@ public class LoginAs {
 		teacher.setForeground(Color.WHITE);
 		teacher.setBackground(new Color(255, 99, 71));
 		bg.add(teacher);
-		teacher.setFont(new Font("Times New Roman", Font.BOLD, 24));
+		teacher.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		
 		JRadioButton student = new JRadioButton("Student");
 		student.setHorizontalAlignment(SwingConstants.CENTER);
@@ -138,7 +138,7 @@ public class LoginAs {
 	
 		student.setBackground(new Color(255, 99, 71));
 		bg.add(student);
-		student.setFont(new Font("Times New Roman", Font.BOLD, 24));
+		student.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		
 		JRadioButton admin = new JRadioButton("Admin");
 		admin.setIcon(null);
@@ -158,7 +158,7 @@ public class LoginAs {
 		admin.setForeground(Color.WHITE);
 		admin.setBackground(new Color(255, 99, 71));
 		bg.add(admin);
-		admin.setFont(new Font("Times New Roman", Font.BOLD, 24));
+		admin.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		
 		JLabel Loginas = new JLabel("Login As :");
 		Loginas.setBackground(new Color(106, 90, 205));

@@ -102,7 +102,7 @@ public class Makeannouncement {
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new LineBorder(new Color(0, 0, 0), 4));
-		panel_1.setBackground(SystemColor.activeCaption);
+		panel_1.setBackground(new Color(255, 218, 185));
 		panel_1.setBounds(10, 72, 536, 155);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
@@ -146,8 +146,9 @@ public class Makeannouncement {
 		panel_1.add(dateChooser);
 		
 		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(new Color(60, 179, 113));
-		panel_2.setBounds(10, 245, 113, 126);
+		panel_2.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		panel_2.setBackground(new Color(240, 230, 140));
+		panel_2.setBounds(10, 237, 130, 134);
 		frame.getContentPane().add(panel_2);
 		panel_2.setLayout(null);
 		
@@ -166,7 +167,7 @@ public class Makeannouncement {
 		btnBack.setForeground(Color.BLACK);
 		btnBack.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		btnBack.setBackground(UIManager.getColor("Button.background"));
-		btnBack.setBounds(12, 83, 89, 29);
+		btnBack.setBounds(12, 95, 108, 29);
 		panel_2.add(btnBack);
 		
 		JLabel lblNewLabel_2 = new JLabel("Announce Here ");
@@ -239,7 +240,7 @@ public class Makeannouncement {
 				
 			}
 		});
-		btnNewButton_1.setBounds(12, 5, 89, 29);
+		btnNewButton_1.setBounds(12, 17, 108, 29);
 		btnNewButton_1.setForeground(Color.BLACK);
 		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 17));
 		btnNewButton_1.setBackground(UIManager.getColor("Button.background"));
@@ -251,7 +252,7 @@ public class Makeannouncement {
 				textArea.setText("");
 			}
 		});
-		btnNewButton.setBounds(12, 44, 89, 29);
+		btnNewButton.setBounds(12, 56, 108, 29);
 		btnNewButton.setForeground(Color.BLACK);
 		btnNewButton.setBackground(UIManager.getColor("Button.background"));
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 18));

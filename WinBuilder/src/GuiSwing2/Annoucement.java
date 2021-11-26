@@ -163,7 +163,7 @@ public class Annoucement {
 			}
 		});
 		btnBack.setBackground(UIManager.getColor("Button.background"));
-		btnBack.setIcon(new ImageIcon(Annoucement.class.getResource("/GuiSwing2/Imgs/back.png")));
+		btnBack.setIcon(new ImageIcon(Annoucement.class.getResource("/GuiSwing2/images/previous.png")));
 		btnBack.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		btnBack.setBounds(1040, 10, 109, 45);
 		panel_1.add(btnBack);

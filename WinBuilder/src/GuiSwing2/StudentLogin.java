@@ -95,6 +95,7 @@ public class StudentLogin {
 			frmStudenLogin.getContentPane().add(addAttendance);
 			
 			JButton viewMarks = new JButton("View Marksheet");
+			viewMarks.setIcon(new ImageIcon(StudentLogin.class.getResource("/GuiSwing2/Imgs/icons8-document-50.png")));
 			viewMarks.setFocusable(false);
 			viewMarks.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e)
@@ -108,6 +109,7 @@ public class StudentLogin {
 			frmStudenLogin.getContentPane().add(viewMarks);
 			
 			JButton viewFee = new JButton("Timetable");
+			viewFee.setIcon(new ImageIcon(StudentLogin.class.getResource("/GuiSwing2/Imgs/icons8-calendar-48.png")));
 			viewFee.setFocusable(false);
 			viewFee.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e)
@@ -121,6 +123,7 @@ public class StudentLogin {
 			frmStudenLogin.getContentPane().add(viewFee);
 			
 			JButton logoutStd = new JButton("Logout");
+			logoutStd.setIcon(new ImageIcon(StudentLogin.class.getResource("/GuiSwing2/images/turn-off (1).png")));
 			logoutStd.setFocusable(false);
 			logoutStd.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e)
@@ -134,6 +137,7 @@ public class StudentLogin {
 			frmStudenLogin.getContentPane().add(logoutStd);
 			
 			JButton getAnnounce = new JButton("Announcements");
+			getAnnounce.setIcon(new ImageIcon(StudentLogin.class.getResource("/GuiSwing2/Imgs/icons8-commercial-48.png")));
 			getAnnounce.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e)
 				{

@@ -115,6 +115,7 @@ public class Checkattend {
 	
 		
 		JButton btnReset = new JButton("Reset");
+		btnReset.setIcon(new ImageIcon(Checkattend.class.getResource("/GuiSwing2/Imgs/redo.png")));
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -125,7 +126,7 @@ public class Checkattend {
 		btnReset.setForeground(Color.RED);
 		btnReset.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		btnReset.setBackground(UIManager.getColor("Button.background"));
-		btnReset.setBounds(351, 177, 98, 36);
+		btnReset.setBounds(369, 177, 118, 44);
 		panel.add(btnReset);
 		
 		JButton btnBack = new JButton("");
@@ -139,8 +140,8 @@ public class Checkattend {
 				
 			}
 		});
-		btnBack.setBorder(new LineBorder(Color.BLACK, 3));
-		btnBack.setIcon(new ImageIcon(Checkattend.class.getResource("/GuiSwing2/Imgs/back.png")));
+		btnBack.setBorder(new LineBorder(new Color(0, 0, 0)));
+		btnBack.setIcon(new ImageIcon(Checkattend.class.getResource("/GuiSwing2/images/previous.png")));
 		btnBack.setForeground(Color.WHITE);
 		btnBack.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnBack.setBackground(UIManager.getColor("Button.background"));
@@ -184,7 +185,7 @@ public class Checkattend {
 		btnNewButton.setBackground(UIManager.getColor("Button.background"));
 		btnNewButton.setForeground(Color.BLACK);
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 18));
-		btnNewButton.setBounds(245, 177, 96, 36);
+		btnNewButton.setBounds(245, 177, 114, 44);
 		panel.add(btnNewButton);
 		
 		

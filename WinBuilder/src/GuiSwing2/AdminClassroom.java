@@ -50,6 +50,7 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.awt.event.ActionEvent;
+import javax.swing.UIManager;
 
 public class AdminClassroom {
 	public static ResultSet rs;
@@ -107,6 +108,7 @@ public class AdminClassroom {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(255, 228, 181));
 		frame.setResizable(false);
 		frame.setBounds(100, 100, 1197, 845);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -114,13 +116,13 @@ public class AdminClassroom {
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
 		JPanel panel = new JPanel();
-		panel.setBorder(new LineBorder(SystemColor.desktop, 8));
-		panel.setBackground(SystemColor.activeCaption);
+		panel.setBorder(new LineBorder(null, 4));
+		panel.setBackground(new Color(240, 230, 140));
 		panel.setBounds(10, 10, 1164, 81);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("AdminClassroom");
+		JLabel lblNewLabel = new JLabel("Admin Classroom");
 		lblNewLabel.setForeground(Color.BLACK);
 		lblNewLabel.setIcon(new ImageIcon("D:\\java\\javaproj\\JavaProject\\src\\images\\icons8-google-AdminClassroom-48.png"));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -176,9 +178,9 @@ public class AdminClassroom {
 			}
 		});
 		btnNewButton.setFocusable(false);
-		btnNewButton.setBackground(Color.RED);
-		btnNewButton.setIcon(new ImageIcon(AdminClassroom.class.getResource("/GuiSwing2/Imgs/back.png")));
-		btnNewButton.setBounds(1123, 757, 51, 37);
+		btnNewButton.setBackground(UIManager.getColor("Button.background"));
+		btnNewButton.setIcon(new ImageIcon(AdminClassroom.class.getResource("/GuiSwing2/images/previous.png")));
+		btnNewButton.setBounds(1115, 757, 59, 41);
 		frame.getContentPane().add(btnNewButton);
 		frame.setVisible(true);
 		

@@ -203,7 +203,7 @@ public class TimeTable {
 //		frame.getContentPane().add(btnSet);
 		
 		JButton btnBack = new JButton("back");
-		btnBack.setIcon(new ImageIcon(TimeTable.class.getResource("/GuiSwing2/Imgs/back.png")));
+		btnBack.setIcon(new ImageIcon(TimeTable.class.getResource("/GuiSwing2/images/previous.png")));
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(usertype=="student") {

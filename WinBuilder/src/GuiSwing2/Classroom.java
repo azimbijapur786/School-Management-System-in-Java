@@ -50,6 +50,7 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.awt.event.ActionEvent;
+import javax.swing.UIManager;
 
 public class Classroom {
 	public static ResultSet rs;
@@ -110,6 +111,7 @@ public class Classroom {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(255, 228, 196));
 		frame.setResizable(false);
 		frame.setBounds(100, 100, 1197, 845);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -118,7 +120,7 @@ public class Classroom {
 		frame.setResizable(false);
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(Color.BLACK, 4));
-		panel.setBackground(SystemColor.activeCaption);
+		panel.setBackground(new Color(240, 230, 140));
 		panel.setBounds(10, 10, 1164, 81);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
@@ -179,8 +181,8 @@ public class Classroom {
 			}
 		});
 		btnNewButton.setFocusable(false);
-		btnNewButton.setBackground(Color.RED);
-		btnNewButton.setIcon(new ImageIcon(Classroom.class.getResource("/GuiSwing2/Imgs/back.png")));
+		btnNewButton.setBackground(UIManager.getColor("Button.background"));
+		btnNewButton.setIcon(new ImageIcon(Classroom.class.getResource("/GuiSwing2/images/previous.png")));
 		btnNewButton.setBounds(1123, 757, 51, 37);
 		frame.getContentPane().add(btnNewButton);
 		frame.setVisible(true);
