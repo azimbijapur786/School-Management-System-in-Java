@@ -75,6 +75,7 @@ public class ViewMarksheet {
 		
 		
 		JLabel ViewMarksheetTitle = new JLabel("View Marksheet");
+		ViewMarksheetTitle.setFocusTraversalPolicyProvider(true);
 		ViewMarksheetTitle.setHorizontalAlignment(SwingConstants.CENTER);
 		ViewMarksheetTitle.setFont(new Font("Times New Roman", Font.BOLD, 30));
 		ViewMarksheetTitle.setBounds(0, 11, 942, 35);

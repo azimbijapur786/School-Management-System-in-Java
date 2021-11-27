@@ -104,7 +104,8 @@ public class Login {
 				        } catch (ClassNotFoundException ex) {
 				        	 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
 				        } catch (SQLException ex) {
-				        	 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+				        	JOptionPane.showMessageDialog(null,"Check Database Connection", "ERROR", JOptionPane.PLAIN_MESSAGE);
+//				        	 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
 				        } 
 					
 					
@@ -137,7 +138,8 @@ public class Login {
 				        } catch (ClassNotFoundException ex) {
 				        	 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
 				        } catch (SQLException ex) {
-				        	 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+				        	JOptionPane.showMessageDialog(null,"Check Database Connection", "ERROR", JOptionPane.PLAIN_MESSAGE);
+//				        	 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
 				        } 
 					
 					

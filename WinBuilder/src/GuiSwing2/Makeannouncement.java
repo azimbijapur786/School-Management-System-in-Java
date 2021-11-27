@@ -29,6 +29,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
 import com.toedter.calendar.JDateChooser;
+import javax.swing.ImageIcon;
 
 public class Makeannouncement {
 	public static Connection con1;
@@ -79,7 +80,7 @@ public class Makeannouncement {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(255, 239, 213));
-		frame.setBounds(100, 100, 571, 414);
+		frame.setBounds(100, 100, 571, 445);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
@@ -109,25 +110,28 @@ public class Makeannouncement {
 		panel_1.setLayout(null);
 		
 		JLabel lblNewLabel_1 = new JLabel("Teacher :");
+		lblNewLabel_1.setForeground(Color.BLACK);
 		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
-		lblNewLabel_1.setBounds(106, 10, 78, 28);
+		lblNewLabel_1.setBounds(69, 16, 78, 28);
 		panel_1.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("standard :");
+		lblNewLabel_1_1.setForeground(Color.BLACK);
 		lblNewLabel_1_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
-		lblNewLabel_1_1.setBounds(106, 48, 78, 28);
+		lblNewLabel_1_1.setBounds(69, 54, 115, 28);
 		panel_1.add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_1_1_1 = new JLabel("Date :");
+		lblNewLabel_1_1_1.setForeground(Color.BLACK);
 		lblNewLabel_1_1_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
-		lblNewLabel_1_1_1.setBounds(106, 86, 78, 28);
+		lblNewLabel_1_1_1.setBounds(69, 94, 78, 28);
 		panel_1.add(lblNewLabel_1_1_1);
 		
 		textField = new JTextField();
 		textField.setForeground(Color.GREEN);
 		textField.setBackground(Color.BLACK);
 		textField.setFont(new Font("Times New Roman", Font.BOLD, 18));
-		textField.setBounds(194, 17, 214, 19);
+		textField.setBounds(194, 17, 214, 28);
 		textField.setText(username);
 		panel_1.add(textField);
 		textField.setColumns(10);
@@ -137,39 +141,14 @@ public class Makeannouncement {
 		textField_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		textField_1.setColumns(10);
 		textField_1.setBackground(Color.BLACK);
-		textField_1.setBounds(194, 55, 214, 19);
+		textField_1.setBounds(194, 56, 214, 28);
 		textField_1.setText(standard);
 		panel_1.add(textField_1);
 		
 		JDateChooser dateChooser = new JDateChooser();
 		dateChooser.setFont(new Font("Times New Roman", Font.BOLD, 18));
-		dateChooser.setBounds(194, 96, 214, 18);
+		dateChooser.setBounds(194, 94, 214, 28);
 		panel_1.add(dateChooser);
-		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBorder(new LineBorder(new Color(0, 0, 0), 2));
-		panel_2.setBackground(new Color(240, 230, 140));
-		panel_2.setBounds(10, 237, 130, 134);
-		frame.getContentPane().add(panel_2);
-		panel_2.setLayout(null);
-		
-	
-		
-		
-		JButton btnBack = new JButton("Back");
-		btnBack.setFocusable(false);
-		btnBack.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Annoucement an = new Annoucement(username,usertype,standard,code);
-				frame.setVisible(false);
-				
-			}
-		});
-		btnBack.setForeground(Color.BLACK);
-		btnBack.setFont(new Font("Times New Roman", Font.BOLD, 18));
-		btnBack.setBackground(UIManager.getColor("Button.background"));
-		btnBack.setBounds(12, 95, 108, 29);
-		panel_2.add(btnBack);
 		
 		JLabel lblNewLabel_2 = new JLabel("Announce Here ");
 		lblNewLabel_2.setForeground(Color.BLACK);
@@ -178,7 +157,7 @@ public class Makeannouncement {
 		frame.getContentPane().add(lblNewLabel_2);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(150, 255, 379, 106);
+		scrollPane.setBounds(150, 255, 379, 143);
 		frame.getContentPane().add(scrollPane);
 		
 		JTextArea textArea = new JTextArea();
@@ -189,6 +168,9 @@ public class Makeannouncement {
 		textArea.setLineWrap(true);
 		scrollPane.setViewportView(textArea);
 		JButton btnNewButton_1 = new JButton("Submit");
+		btnNewButton_1.setIcon(new ImageIcon(Makeannouncement.class.getResource("/GuiSwing2/Imgs/send.png")));
+		btnNewButton_1.setBounds(20, 250, 120, 41);
+		frame.getContentPane().add(btnNewButton_1);
 		btnNewButton_1.setFocusable(false);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -241,23 +223,42 @@ public class Makeannouncement {
 				
 			}
 		});
-		btnNewButton_1.setBounds(12, 17, 108, 29);
 		btnNewButton_1.setForeground(Color.BLACK);
 		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 17));
 		btnNewButton_1.setBackground(UIManager.getColor("Button.background"));
-		panel_2.add(btnNewButton_1);
 		JButton btnNewButton = new JButton("Clear");
+		btnNewButton.setIcon(new ImageIcon(Makeannouncement.class.getResource("/GuiSwing2/Imgs/erase.png")));
+		btnNewButton.setBounds(20, 306, 120, 41);
+		frame.getContentPane().add(btnNewButton);
 		btnNewButton.setFocusable(false);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textArea.setText("");
 			}
 		});
-		btnNewButton.setBounds(12, 56, 108, 29);
 		btnNewButton.setForeground(Color.BLACK);
 		btnNewButton.setBackground(UIManager.getColor("Button.background"));
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 18));
-		panel_2.add(btnNewButton);
+		
+	
+		
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.setIcon(new ImageIcon(Makeannouncement.class.getResource("/GuiSwing2/images/previous.png")));
+		btnBack.setSelectedIcon(new ImageIcon(Makeannouncement.class.getResource("/GuiSwing2/images/previous.png")));
+		btnBack.setBounds(20, 357, 120, 41);
+		frame.getContentPane().add(btnBack);
+		btnBack.setFocusable(false);
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Annoucement an = new Annoucement(username,usertype,standard,code);
+				frame.setVisible(false);
+				
+			}
+		});
+		btnBack.setForeground(Color.BLACK);
+		btnBack.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		btnBack.setBackground(UIManager.getColor("Button.background"));
 		
 	}
 }
