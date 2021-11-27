@@ -115,6 +115,7 @@ public Profile(String usern,String usert , String stand, String code) {
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
 		frame.setResizable(false);
+		frame.setTitle("My Profile");
 
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(Color.BLACK, 4));

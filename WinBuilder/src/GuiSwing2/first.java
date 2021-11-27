@@ -44,7 +44,7 @@ public class first extends JFrame {
 	public first() {
 	    
 		setType(Type.POPUP);
-		setTitle("ADMIN LOGIN");
+		setTitle("Admin Login");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1104, 646);
 		setLocationRelativeTo(null);

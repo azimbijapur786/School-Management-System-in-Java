@@ -67,7 +67,7 @@ public class TeacherLogin {
 			
 		frmTeacherLogin = new JFrame();
 		frmTeacherLogin.getContentPane().setBackground(SystemColor.info);
-		frmTeacherLogin.setTitle("Studen Login");
+		frmTeacherLogin.setTitle("Teacher Login");
 		frmTeacherLogin.setBounds(100, 100, 1104, 646);
 		frmTeacherLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmTeacherLogin.getContentPane().setLayout(null);

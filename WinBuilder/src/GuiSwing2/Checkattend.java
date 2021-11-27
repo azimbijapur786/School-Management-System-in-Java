@@ -82,6 +82,8 @@ public class Checkattend {
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 		frame.setResizable(false);
+		frame.setTitle("Check Student's Attendance");
+		
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(SystemColor.menuText, 6));
 		panel.setBackground(new Color(245, 245, 220));

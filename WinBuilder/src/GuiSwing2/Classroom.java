@@ -118,6 +118,7 @@ public class Classroom {
 		frame.setLocationRelativeTo(null);
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
+		frame.setTitle("Classroom");
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(Color.BLACK, 4));
 		panel.setBackground(new Color(240, 230, 140));

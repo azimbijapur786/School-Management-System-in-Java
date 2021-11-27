@@ -49,7 +49,7 @@ public class AddTeacher {
 	 */
 	 public AddTeacher () {
 		frmCoralCoastInternational = new JFrame();
-		frmCoralCoastInternational.setTitle("CORAL COAST INTERNATIONAL HIGH SCHOOL");
+		frmCoralCoastInternational.setTitle("Add Teacher");
 		frmCoralCoastInternational.setBounds(100, 100, 789, 486);
 		frmCoralCoastInternational.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmCoralCoastInternational.setLocationRelativeTo(null);

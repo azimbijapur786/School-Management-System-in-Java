@@ -44,7 +44,7 @@ public class StudentLogin {
 			System.out.println(username+" "+usertype+" "+ standard +" "+rollno);
 			frmStudenLogin = new JFrame();
 			frmStudenLogin.getContentPane().setBackground(new Color(255, 250, 205));
-			frmStudenLogin.setTitle("Studen Login");
+			frmStudenLogin.setTitle("Student Login");
 			frmStudenLogin.setBounds(100, 100, 1104, 646);
 			frmStudenLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frmStudenLogin.getContentPane().setLayout(null);

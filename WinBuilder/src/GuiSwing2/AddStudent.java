@@ -65,7 +65,7 @@ public class AddStudent {
 	 */
 	private void initialize() {
 		frmCoralCoastInternational = new JFrame();
-		frmCoralCoastInternational.setTitle("CORAL COAST INTERNATIONAL HIGH SCHOOL");
+		frmCoralCoastInternational.setTitle("Add Students");
 		frmCoralCoastInternational.getContentPane().setFont(new Font("Lucida Grande", Font.PLAIN, 18));
 		frmCoralCoastInternational.getContentPane().setBackground(new Color(255, 228, 196));
 		frmCoralCoastInternational.setBounds(100, 100, 873, 571);

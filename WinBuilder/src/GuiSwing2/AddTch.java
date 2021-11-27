@@ -103,6 +103,7 @@ public AddTch() {
 		frame.setLocationRelativeTo(null);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
+		frame.setTitle("Add and Manage Teachers");
 		frame.setResizable(false);
 
 		JPanel panel = new JPanel();
@@ -376,7 +377,8 @@ public AddTch() {
 				        	 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
 				        } 
 //				Login lg = new Login(user,user);
-				frame.setVisible(false);
+					first f = new first();
+					frame.setVisible(false);
 				 
 				 
 //				 else{

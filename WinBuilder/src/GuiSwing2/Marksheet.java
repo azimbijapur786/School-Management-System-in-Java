@@ -130,6 +130,7 @@ public class Marksheet {
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
 		frame.setResizable(false);
+		frame.setTitle("Add and Generate Marksheets");
 
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(Color.BLACK, 3));

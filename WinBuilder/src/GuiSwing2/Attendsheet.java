@@ -122,6 +122,7 @@ public class Attendsheet {
 		frame.setLocationRelativeTo(null);
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
+		frame.setTitle("Attendance Sheet");
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(null, 4));
 		panel.setBackground(new Color(240, 230, 140));

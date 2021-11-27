@@ -39,7 +39,7 @@ public class TimeTable {
 	ImageIcon setImage1;
 	public static Connection con1;
 	public static PreparedStatement insert;
-	private JFrame frame;
+	private JFrame frmViewTimetable;
 	static String username;
 	static String usertype;
 	static String standard;
@@ -72,11 +72,11 @@ public class TimeTable {
 				try {
 					if(usertype=="Student") {
 						TimeTable window = new TimeTable(username,usertype,standard,rollno);
-						window.frame.setVisible(true);
+						window.frmViewTimetable.setVisible(true);
 					}
 					else {
 						TimeTable window = new TimeTable(username,usertype,standard,code);
-						window.frame.setVisible(true);
+						window.frmViewTimetable.setVisible(true);
 					}
 					
 					
@@ -95,20 +95,21 @@ public class TimeTable {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.getContentPane().setBackground(new Color(255, 239, 213));
-		frame.setResizable(false);
-		frame.setBounds(100, 100, 908, 558);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setLocationRelativeTo(null);
-		frame.setVisible(true);
-		frame.getContentPane().setLayout(null);
+		frmViewTimetable = new JFrame();
+		frmViewTimetable.setTitle("View Timetable");
+		frmViewTimetable.getContentPane().setBackground(new Color(255, 239, 213));
+		frmViewTimetable.setResizable(false);
+		frmViewTimetable.setBounds(100, 100, 908, 558);
+		frmViewTimetable.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmViewTimetable.setLocationRelativeTo(null);
+		frmViewTimetable.setVisible(true);
+		frmViewTimetable.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(Color.BLACK, 3));
 		panel.setBackground(new Color(240, 230, 140));
 		panel.setBounds(10, 10, 875, 67);
-		frame.getContentPane().add(panel);
+		frmViewTimetable.getContentPane().add(panel);
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Time Table");
@@ -121,7 +122,7 @@ public class TimeTable {
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		panel_1.setBounds(10, 87, 875, 354);
-		frame.getContentPane().add(panel_1);
+		frmViewTimetable.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 		
 	 lblNewLabel_1 = new JLabel("");
@@ -180,7 +181,7 @@ public class TimeTable {
 		btnNewButton.setBackground(UIManager.getColor("Button.background"));
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		btnNewButton.setBounds(734, 451, 150, 57);
-		frame.getContentPane().add(btnNewButton);
+		frmViewTimetable.getContentPane().add(btnNewButton);
 //		
 //		JButton btnSet = new JButton("Set");
 //		if(usertype=="Teacher") {
@@ -210,12 +211,12 @@ public class TimeTable {
 //					Mainmenu mm = new Mainmenu(username,usertype,standard,rollno);
 					StudentLogin sl = new StudentLogin(username,usertype,standard,rollno);
 					
-					 frame.setVisible(false);
+					 frmViewTimetable.setVisible(false);
 				}
 				else if(usertype=="teacher"){
 //					Mainmenu mm = new Mainmenu(username,usertype,standard,code);
 					TeacherLogin Tl = new TeacherLogin(username,usertype,standard,code);
-					 frame.setVisible(false);
+					 frmViewTimetable.setVisible(false);
 				}
 				
 			}
@@ -225,7 +226,7 @@ public class TimeTable {
 		btnBack.setFocusable(false);
 		btnBack.setBackground(UIManager.getColor("Button.background"));
 		btnBack.setBounds(583, 451, 141, 57);
-		frame.getContentPane().add(btnBack);
+		frmViewTimetable.getContentPane().add(btnBack);
 	}
 	public void load_tt() {
 		 try {

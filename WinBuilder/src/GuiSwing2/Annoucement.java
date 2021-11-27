@@ -35,7 +35,7 @@ import javax.swing.UIManager;
 
 public class Annoucement {
 
-	private JFrame frame;
+	private JFrame frmViewAnnouncements;
 	public static ResultSet rs;
 	public static Connection con1;
 	public static PreparedStatement insert;
@@ -54,11 +54,11 @@ public class Annoucement {
 				try {
 					if(usertype=="student") {
 					Annoucement window = new Annoucement(username,usertype,standard,rollno);
-					window.frame.setVisible(true);
+					window.frmViewAnnouncements.setVisible(true);
 					}
 					else {
 						Annoucement window = new Annoucement(username,usertype,standard,code);
-						window.frame.setVisible(true);
+						window.frmViewAnnouncements.setVisible(true);
 					}
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -89,20 +89,21 @@ public class Annoucement {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.getContentPane().setBackground(new Color(255, 239, 213));
-		frame.setBounds(100, 100, 1204, 674);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
-		frame.setVisible(true);
-		frame.setResizable(false);
+		frmViewAnnouncements = new JFrame();
+		frmViewAnnouncements.setTitle("View Announcements");
+		frmViewAnnouncements.getContentPane().setBackground(new Color(255, 239, 213));
+		frmViewAnnouncements.setBounds(100, 100, 1204, 674);
+		frmViewAnnouncements.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmViewAnnouncements.getContentPane().setLayout(null);
+		frmViewAnnouncements.setVisible(true);
+		frmViewAnnouncements.setResizable(false);
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(Color.BLACK, 3));
 		panel.setBackground(new Color(240, 230, 140));
 		panel.setBounds(10, 10, 1170, 80);
-		frame.getContentPane().add(panel);
+		frmViewAnnouncements.getContentPane().add(panel);
 		panel.setLayout(null);
-		frame.setLocationRelativeTo(null);
+		frmViewAnnouncements.setLocationRelativeTo(null);
 		JLabel lblNewLabel = new JLabel("Announcements");
 		lblNewLabel.setIcon(new ImageIcon(Annoucement.class.getResource("/GuiSwing2/Imgs/icons8-commercial-48.png")));
 		lblNewLabel.setForeground(Color.BLACK);
@@ -113,12 +114,12 @@ public class Annoucement {
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(1178, 100, -1163, 453);
-		frame.getContentPane().add(scrollPane);
+		frmViewAnnouncements.getContentPane().add(scrollPane);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(255, 239, 213));
 		panel_1.setBounds(10, 562, 1164, 65);
-		frame.getContentPane().add(panel_1);
+		frmViewAnnouncements.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Make Announcement");
@@ -132,7 +133,7 @@ public class Annoucement {
 			public void actionPerformed(ActionEvent e) {
 				
 				Makeannouncement ma = new Makeannouncement(username,usertype,standard,code);
-				frame.setVisible(false);
+				frmViewAnnouncements.setVisible(false);
 				
 				
 			}
@@ -153,12 +154,12 @@ public class Annoucement {
 
 					StudentLogin sl = new StudentLogin(username,usertype,standard,rollno);
 				
-				 frame.setVisible(false);
+				 frmViewAnnouncements.setVisible(false);
 				}
 				else {
 
 					TeacherLogin Tl = new TeacherLogin(username,usertype,standard,code);
-					 frame.setVisible(false);
+					 frmViewAnnouncements.setVisible(false);
 				}
 			}
 		});
@@ -232,7 +233,7 @@ public class Annoucement {
 		table.setRowHeight(table.getRowHeight() + 20);
 		JScrollPane sp=new JScrollPane(table);
 		sp.setBounds(10, 103, 1164, 450);
-		frame.getContentPane().add(sp);
+		frmViewAnnouncements.getContentPane().add(sp);
 		
 		
 		

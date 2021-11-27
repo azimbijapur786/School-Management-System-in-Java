@@ -85,6 +85,7 @@ public class Makeannouncement {
 		frame.setVisible(true);
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
+		frame.setTitle("Add Announcements");
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(Color.BLACK, 3));
 		panel.setBackground(new Color(240, 230, 140));

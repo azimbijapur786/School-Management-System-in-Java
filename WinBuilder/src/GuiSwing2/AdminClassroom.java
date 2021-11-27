@@ -115,6 +115,7 @@ public class AdminClassroom {
 		frame.setLocationRelativeTo(null);
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
+		frame.setTitle("View All Students");
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(null, 4));
 		panel.setBackground(new Color(240, 230, 140));

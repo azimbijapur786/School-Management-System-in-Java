@@ -102,6 +102,7 @@ public AddStd() {
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
 		frame.setResizable(false);
+		frame.setTitle("Add and Manage Students");
 
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(null, 3));

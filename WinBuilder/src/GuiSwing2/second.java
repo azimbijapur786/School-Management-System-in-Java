@@ -45,7 +45,7 @@ public class second {
 	private void initialize() {
 		frmStudentProfile = new JFrame();
 		frmStudentProfile.getContentPane().setBackground(SystemColor.info);
-		frmStudentProfile.setTitle("CORAL COAST INTERNATIONAL HIGH SCHOOL");
+		frmStudentProfile.setTitle("K.C.Gandhi English School");
 		frmStudentProfile.setBounds(100, 100, 780, 466);
 		frmStudentProfile.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmStudentProfile.setVisible(true);
